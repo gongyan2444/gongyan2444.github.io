@@ -1,12 +1,12 @@
 # Setup
-title:	      Yan Gong's homepage
+title:	      Yan's homepage
 tagline:      An astronomer
-baseurl:      "http://www.pmo.ac.cn"
+baseurl:      ""
 paginate:     1
 
 # About/contact
-author:       Yan Gong
-  name:       Yan Gong
+author:       Yan
+  name:       Yan
   url:        http://www.pmo.ac.cn
 
 # Gems
