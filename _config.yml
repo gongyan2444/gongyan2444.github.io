@@ -1,13 +1,13 @@
 # Setup
-title:        Welcome to Yan Gong's homepage
-tagline:      A responsive theme for your project on GitHub Pages
+title:	      Yan Gong's homepage
+tagline:      An astronomer
 baseurl:      ""
 paginate:     1
 
 # About/contact
 author:
-  name:       Author name
-  url:        http://yourhomepage.com 
+  name:       Yan
+  url:        http://www.pmo.ac.cn
 
 # Gems
 gems:
