@@ -106,9 +106,31 @@
                     </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <h4 style="text-align:center">Large shells at the Outer arm, unveiled by MWISP</h4>
-                    <img class="img-responsive" src="img/shell.png" alt="">
-                    <h4 style="text-align:center">Gong et al. (2016), A&A, 574, A56</h4>
+                    <div id="myCarousel" class="carousel slide">
+                     <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>   
+                     <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <h5 style="text-align:center">Large shells at the Outer arm, unveiled by MWISP</h5>
+                                <img class="img-responsive" src="img/shell.png" alt="">
+                                <h5 style="text-align:center">Gong et al. (2016), A&A, 574, A56</h5>
+                            </div>
+                            <div class="item">
+                                <h5 style="text-align:center">L1188: star formation triggered by cloud-cloud collision</h5>
+                                <img class="img-responsive" src="img/L1188.png" alt="">
+                                <h5 style="text-align:center">Gong et al. (2017), ApJL, accepted</h5>
+                            </div>
+                        </div>
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;
+                        </a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;
+                        </a> 
+                    </div>
                 </div>
             </div>
 
@@ -188,6 +210,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <script src="js/image-stage.js"></script>
 </body>
 
 </html>
