@@ -33,6 +33,18 @@
 	<strong><font color="red">Answer:</font></strong>: The mass of molecular gas in an interstellar cloud is often measured using line emission from low rotational levels of CO, which are sensitive to the CO mass, and then scaling to the assumed molecular hydrogen H<sub>2</sub> mass. However, a significant H<sub>2</sub> mass may lie outside the CO region, in the outer regions of the molecular cloud where the gas-phase carbon resides in C or C+. Here, H<sub>2</sub> self-shields or is shielded by dust from UV photodissociation, whereas CO is photodissociated. This H<sub>2</sub> gas is “dark” in molecular transitions because of the absence of CO and other trace molecules, and because H<sub>2</sub> emits so weakly at temperatures 10 K < T < 100 K typical of this molecular component. This component has been indirectly observed through other tracers of mass such as gamma rays produced in cosmic-ray collisions with the gas and far-infrared/submillimeter wavelength dust continuum radiation.</br>
 	巨星支在HR图中是垂直的，所以通过分光时差来测量距离的误差较大，最佳的情况下，绝对星等有0.5 m的误差，所以距离精度会达到25%。</br>
 	RATRAN can be installed with CRETE github</br>
+	<strong>radio recombination lines </strong></br>
+	The H109$\alpha$ line was first detected by P. Mezger in 1965, despite (incorrect) theoretical predictions that pressure broadening would smear out the lines in frequency and make them undetectable. It is true that atomic collisions in the interstellar medium significantly disturb the energy levels of large atoms, but this disturbance is about the same for adjacent energy levels, so the differential disturbance that alters the line frequency is actually much smaller. His advice: <strong>“Don’t abandon an observation just because you have been told that it will fail.”</strong></br>
+	The RRL has a Voigt profile with line width (Gordon & Sorochenko 2002):</br>
+	$\Delta v_{\rm rrl} = 0.534\Delta v_{\rm pre} + (\Delta v_{\rm tur}^{2}+\Delta v_{\rm the}^{2}+0.217\Delta v_{\rm pre}^{2})^{1/2}$</br>
+	where, "rrl", "pre", "tur", "the" represent the line width of radio recombination lines, pressure broadening, turbulence broadening, thermal broadening.</br>
+	And the pressure broadening can be assessed with the formula of Brocklehurst & Seaton (1972):</br>
+	$\Delta v_{\rm pre} = 4.287 (\frac{n}{100})^{7.4}(\frac{10^{4}}{T_{\rm e}})^{0.1}(\frac{n_{\rm e}}{10^{4}}) (km/s)$,
+	where n is the principle quantum number, Te is the electron temperature, and ne is the electron density.
+
+
+
+
 	<h2>To-do list:</h2>
 	<font size="6px">
 	<ul id="mylist">
