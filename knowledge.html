@@ -56,7 +56,8 @@
 	where $T_{\rm r}$ is the receiver temperature, $T_{\rm sky}$ is the sky temperature inside the atmosphere ($2.73*exp(-\tau)+T_{\rm a}*(1-exp(-\tau))$), $\tau$ is the opacity, and $T_{\rm a}$ is the atmosphere effective temperature.</br>
 	SKYDIP (Tipping): measure the optical depth of atmosphere at zenith (Wilson, T. L., Tools of Radio Astronomy).</br>
 	$T_{\rm abs}(z) = T_{\rm rx}+\eta T_{\rm atm}(1-e^{-\tau_{0} sec(z)})+T_{\rm amb}(1-\eta)$. </br>
-	This can be converted to  $V_{\rm abs}(z) = -V_{\rm atm} e^{-\tau_{0} sec(z)}+ (V_{\rm rx}+V_{\rm atm})$. With this equation and measurements of $V_{\rm abs}(z)$ and z at different zenith angles, we can fit $\tau_{0}$ and other constants.
+	This can be converted to  $V_{\rm abs}(z) = -V_{\rm atm} e^{-\tau_{0} sec(z)}+ (V_{\rm rx}+V_{\rm atm})$. With this equation and measurements of $V_{\rm abs}(z)$ and z at different zenith angles, we can fit $\tau_{0}$ and other constants.</br>
+	A source can reach the highest EL: $EL=90-|\phi - \delta|$, where $\phi$ is the latitude and $\delta$ is the declination.</br>
 	
 	
 
@@ -69,8 +70,7 @@
 	<h2>To-do list:</h2>
 	<font size="6px">
 	<ul id="mylist">
-	<li> run RT codes to model the CC spectrum.</li>
-	<li>video js的使用方法</li>
+	<li> run RT (RATRAN) codes to model the CC spectrum.</li>
 	</ul>
 	</font>
 	</body>
