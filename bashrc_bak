@@ -1,0 +1,92 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# Source global definitions
+if [ -f /etc/bash.bashrc ]; then
+	. /etc/bash.bashrc
+fi
+
+# If running interactively, then:
+if [ "$PS1" ]; then
+
+    # don't put duplicate lines in the history. See bash(1) for more options
+    export HISTCONTROL=ignoredups
+    # have a large history
+    export HISTFILESIZE=1000000000000
+
+    # enable color support of ls and also add handy aliases
+    eval `dircolors -b`
+    alias ls='ls --color=auto'
+    alias ll='ls -lh'
+    alias la='ls -A'
+    alias df='df -h'
+    alias ds9='/homes/ygong/soft/ds9/ds9'
+    # Some more alias to avoid making mistakes:
+    alias rm='rm -i'
+    alias cp='cp -i'
+    alias mv='mv -i'
+
+    # Toolbox:
+    #alias toolbox='/homes/peter/Test_Toolbox2/toolbox2.py'
+    #alias nod3='/homes/peter/New_NOD3/nod3.py'
+    #export PYTHONPATH=/homes/peter/New_NOD3/lib/python2.7/site-packages/
+    # set a fancy prompt
+    PS1='\u@\h:\w\$ '
+
+    # If this is an xterm set the title to user@host:dir
+    case $TERM in
+    xterm*)
+        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+        ;;
+    *)
+        ;;
+    esac
+fi
+
+
+###########Gildas###################
+#source /soft/astro/gag/jul10/initgag.sh
+#source /soft/astro/gag/apr11/initgag.sh
+
+#source /soft/astro/gag/2013-08/initgag.sh
+
+#source /soft/astro/gag/dec10/initgag.sh
+
+#source /soft/astro/gag/2014-07/initgag.sh
+
+#source /soft/astro/gag/2015-02/initgag.sh
+
+source /soft/astro/gag/2017-07/initgag.sh
+
+###########IDL####################
+. /local/src/rsi/idl/idl81/bin/idl_setup.bash
+export IDL_STARTUP=~/.idlstartup.pro
+
+##Radex
+export PATH=$PATH:/homes/ygong/soft/Radex/bin
+###########Karma###################
+#source /soft/astro/karma/initkarma.sh
+
+############STARLINK#############
+#source /soft/astro/star-2014A/init_starlink.bash
+
+#####CASA#########
+source /soft/astro/casa/initcasa470.sh
+source /homes/ygong/pipeline4.7.sh
+#source /soft/astro/casa/initcasa.sh
+#source /soft/astro/casa/initcasa-pipeline.sh
+
+#####Montage######
+export PATH=$PATH:/homes/ygong/soft/Montage/bin
+# DISPERSE
+export PATH="/homes/ygong/soft/disperse/disperse/bin:$PATH"
+
+
+##pyradex##
+#export RADEX_DATAPATH=/homes/ygong/soft/moldata
+
+# added by Anaconda2 installer
+export PATH="/homes/ygong/soft/anaconda2/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
+
