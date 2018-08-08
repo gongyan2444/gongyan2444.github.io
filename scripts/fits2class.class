@@ -1,0 +1,7 @@
+file out myline.hifi single
+fits read 1342190101-wbs-0001.fits
+fits read 1342190101-wbs-0002.fits
+fits read 1342190101-wbs-0003.fits
+file in myline.hifi
+find
+list
