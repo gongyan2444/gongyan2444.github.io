@@ -1,0 +1,71 @@
+!!!!!!!!!!!!!!!!!!!!
+!!!! Sigma plot !!!!
+!!!!!!!!!!!!!!!!!!!!
+
+file in 12co.bas        !!! baseline-removed data
+find
+set angle min
+sic delete sigma.dat    !!! Save rms into sigma.dat
+sic out sigma.dat
+for i 1 to found
+        get next
+        say 'off_lambda' 'off_beta' 'sigma'
+next
+sic out
+
+
+sic delete mysig.sig
+file out mysig.sig s
+find
+for i 1 to found
+  get n
+  resample 3 2 0 2 v
+  let ry sigma
+  write
+next
+
+!!! create a sigma fits file  !!!
+
+file in mysig.sig
+find
+set weight equal
+table mysig new /math tpeak(0)
+xy_map mysig /nogrid
+sic delete mysig_rms.fits
+vector\fits mysig_rms.fits from mysig.lmv /bits -32
+sic delete mysig.sig
+sic delete mysig.lmv
+sic delete mysig.wei
+sic delete mysig.tab
+
+
+let name mysig_rms
+let type fits
+go bit
+pause
+
+
+
+
+clear
+set def
+pen /def
+g\set box m
+g\col x 1 y 2 z 3 /file sigma.dat
+lim * * * * /rev x
+
+g\rgdata x y z /blank -1
+
+lut rainbow3
+g\plo /scal line 0 2
+wed
+
+g\label "\gDR.A. [arcmin]" /x
+g\label "\gDDec. [arcmin]" /y
+g\box 
+
+
+
+
+
+
