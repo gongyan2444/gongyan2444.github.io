@@ -13260,7 +13260,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 19-20/07/2019 </span>
@@ -13298,6 +13298,67 @@ div#notebook {
 <span class="c1"># 3171	GLO_LON_81.50_0.65	OTF		# </span>
 <span class="c1"># 3172	OFF_80.0_4.0		ON-OFF		# onoff against 80.0,8.0</span>
 <span class="c1"># 3173	OFF_78.0_4.0		ON-OFF		# onoff against 78.0,8.0; stopped after 2min integration.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 23-24/07/2019 </span>
+<span class="c1"># firmware specpol: band1: aligned, band2: aligned</span>
+<span class="c1"># check on scan 3266: specpol chan dispersion correction find for both bands</span>
+<span class="c1"># Pointing function defect at telescope --&gt; use L-pointing/L-focus always</span>
+<span class="c1"># use specpol bb2 for pointing/focus (for wffts online plotter always jumps back to bb1)</span>
+<span class="c1"># 3266	3C286			L-Pointing	# NulE=-3.2&quot;  Col*=-7.8&quot; el=65</span>
+<span class="c1"># 3267	3C286			L-Focus		# zLin=-3.5 el=65 (used specpol bb2; offset 1mm from wffts bb3, repeat)</span>
+<span class="c1"># 3268	3C286			L-Pointing	# NulE=-3.1&quot;  Col*=-5.1&quot; el=65</span>
+<span class="c1"># 3269	3C286			L-Focus		# zLin=-2.2 el=65 (repeated with wffts bb3)</span>
+<span class="c1"># 3270	W3OH			L-Pointing	# NulE=-1.5  Col*=-9.6 el=22  (points with specpol on ch3oh maser!!)</span>
+<span class="c1"># 3271	W3OH			ON-OFF		#Shape of Methanolmaser ok</span>
+<span class="c1"># 3272	NGC7027			L-Pointing	# NulE=-15.1 Col*=-11.2 el=30d (repeat b/c large correction)</span>
+<span class="c1"># 3273	NGC7027			L-Pointing	# NulE=-15.1 Col*=-13.5 el=42d (repeat b/c large correction)</span>
+<span class="c1"># 3274	OFF_80.0_4.0_2		ONOFF		# onoff 80.0, 4.0 against 80.0, 6.0 (small contamination in stacked RRLs)</span>
+<span class="c1"># 3275	OFF_78.0_4.0		ONOFF		# onoff 78.0, 4.0 against 78.0, 8.0 (scan 3173 was not complete, check again; clear)</span>
+<span class="c1"># 3276	OFF_82.0_4.0_2		ONOFF		# onoff 82.0, 4.0 against 82.0, 6.0 </span>
+<span class="c1"># 3277	GLO_LON_78.50_-0.95	OTF		# </span>
+<span class="c1"># 3278	GLO_LON_78.50_-0.85	OTF		# </span>
+<span class="c1"># 3279	GLO_LON_78.50_-0.75	OTF		# </span>
+<span class="c1"># 3280	NGC7027			L-Pointing	# NulE=3.7  Col*=-3.7  el=63d (large corr. ~20% hpbw)</span>
+<span class="c1"># 3281	NGC7027			L-Focus		# zLin=-3.8 el=63d</span>
+<span class="c1"># 3282	NGC7027			L-Pointing	# NulE=5.0  Col*=-6.6  el=63d (long)</span>
+<span class="c1"># 3283	3C286			L-Pointing	# NulE=-8.8 Col*=-3.9  el=30d (large corr. ~10% hpbw )</span>
+<span class="c1"># 3284	1749+096		L-Pointing	# NulE=-7.3 Col*=-14.8 el=33d (large corr. ~10% hpbw )</span>
+<span class="c1"># 3285	1749+096		L-Pointing	# NulE=-7.4 Col*=-16.3 el=33d </span>
+<span class="c1"># 3286	GLO_LON_33.00_-0.30	OTF		# </span>
+<span class="c1"># 3287	GLO_LON_33.00_-0.50	OTF		# </span>
+<span class="c1"># 3288	2013+37			L-Pointing	# NulE=-2.4 Col*=-4.6 el=72d</span>
+<span class="c1"># 3289	OFF_82.0_4.0_3		ONOFF		# onoff 82.0, 4.0 against 82.0, 7.0 </span>
+<span class="c1"># 3290	GLO_LON_78.50_-0.65	OTF		# </span>
+<span class="c1"># 3291	GLO_LON_78.50_-0.55	OTF		# </span>
+<span class="c1"># 3292	2013+37			L-Pointing	# NulE=-2.4 Col*=-5.4 el=52d</span>
+<span class="c1"># 3293	GLO_LON_78.50_-0.45	OTF		# </span>
+<span class="c1"># 3294	GLO_LON_78.50_-0.35	OTF		# </span>
+<span class="c1"># 3295	2013+37			L-Pointing	# NulE=-2.8 Col*=-8.1 el=37d</span>
+<span class="c1">#3296	GLO_LON_78.50_-0.25	OTF		# </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
