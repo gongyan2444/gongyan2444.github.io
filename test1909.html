@@ -13112,58 +13112,82 @@ div#notebook {
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 02-03/09/2019 </span>
-<span class="c1"># firmware specpol: band1: ok , band2: missaligned by 25</span>
-<span class="c1"># receiver loading: ok</span>
-<span class="c1"># check on scan : specpol chan dispersion correction - ok for both bands (band2 looks a bit differerent than usual - it has two peaks, but seems to have a smoothly varying spectrum.</span>
-<span class="c1"># start 02.09.2019, 17:00  - end 09.08.2019 - 2:00</span>
-<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz </span>
-<span class="c1"># NOTE1: Specpol now with low-pass filters; contamination remains between 5.8-6.0 GHz</span>
-<span class="c1"># NOTE2: Tried glo_lat_-2.00_0.00, but telescope did not allow; too low</span>
-<span class="c1">##########################</span>
-<span class="mi">5288</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.0 NulE=10.7 el=67</span>
-<span class="mi">5289</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Focus</span>		<span class="c1"># zLin=-1.3mm         el=67</span>
-<span class="mi">5290</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-1.5 NulE=6.1  el=67</span>
-<span class="mi">5291</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># failed</span>
-<span class="mi">5292</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-1.6 NulE=6.43  el=67</span>
-<span class="mi">5293</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-6.0 NulE=2.1  el=22</span>
-<span class="mi">5294</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># Spectrum ok</span>
-<span class="mi">5295</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-9.3 NulE=4.2 el=28</span>
-<span class="mi">5296</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-15.0 NulE=-4.8 el=32 (strange pointing corrections derived here; don&#39;t use for cal)</span>
-<span class="mi">5297</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.2 NulE=4.6  el=33</span>
-<span class="mi">5298</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.8 NulE=5.8  el=33</span>
-<span class="mi">5299</span>	<span class="n">GLO_LON_78</span><span class="o">.</span><span class="mf">00_0.50</span>	<span class="n">OTF</span>		<span class="c1">#</span>
-<span class="mi">5300</span>	<span class="n">OFF_82</span><span class="o">.</span><span class="mf">0_4.0_4</span>		<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span>		<span class="c1"># check off position against 82.0d, 12.0d</span>
-<span class="mi">5301</span> 	<span class="mi">1334</span><span class="o">-</span><span class="mi">127</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-13.9 NulE=7.1  el=17</span>
-<span class="mi">5302</span>	<span class="n">OFF_0</span><span class="o">.</span><span class="mf">0_4.0</span>		<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span>		<span class="c1"># check off position against 0.0d, 8.0d</span>
-<span class="mi">5303</span>	<span class="n">OFF_2</span><span class="o">.</span><span class="mf">0_4.0</span>		<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span>		<span class="c1"># check off position against 2.0d, 8.0d</span>
-<span class="mi">5304</span>	<span class="n">GLO_LAT_</span><span class="o">-</span><span class="mf">0.00_0</span><span class="o">.</span><span class="mi">00</span>	<span class="n">OTF</span>		<span class="c1">#</span>
-<span class="mi">5305</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.8 NulE=-4.7 el=60</span>
-<span class="mi">5306</span>	<span class="n">NGC7027</span>			<span class="n">Focus</span>		<span class="c1"># zLin=-9.2mm el=60 (the system accidentally applied the focus twice)</span>
-<span class="c1">###### following scans have bad focus</span>
-<span class="mi">5307</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-3.7 NulE=-2.5 el=60   (focus of by 4mm)</span>
-<span class="mi">5308</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-6.0 NulE=-3.1 el=60   (focus of by 4mm)</span>
-<span class="mi">5309</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-1.9 NulE=-6.5 el=31   (focus of by 4mm)</span>
-<span class="mi">5310</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-12.6 NulE=-5.5 el=32   (focus of by 4mm)</span>
-<span class="mi">5311</span>	<span class="n">GLO_LAT_29</span><span class="o">.</span><span class="mf">60_0.00</span>	<span class="n">OTF</span>		<span class="c1">#    (focus of by 4mm)</span>
-<span class="mi">5312</span>	<span class="n">GLO_LAT_29</span><span class="o">.</span><span class="mf">40_0.00</span>	<span class="n">OTF</span>		<span class="c1">#    (focus of by 4mm)</span>
-<span class="mi">5313</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-11.1 NulE=-14.4 el=21   (focus of by 4mm)</span>
-<span class="mi">5314</span>	<span class="n">GLO_LAT_29</span><span class="o">.</span><span class="mf">20_0.00</span>	<span class="n">OTF</span>		<span class="c1">#    (focus of by 4mm)</span>
-<span class="mi">5315</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-4.6 NulE=-7.5 el=65   (focus of by 4mm)</span>
-<span class="mi">5316</span>	<span class="n">GLO_LON_76</span><span class="o">.</span><span class="mf">50_0.95</span>	<span class="n">OTF</span>		<span class="c1">#    (duplicate; focus of by 4mm)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
+# Observations 02-03/09/2019 
+# firmware specpol: band1: ok , band2: missaligned by 25
+# receiver loading: ok
+# check on scan : specpol chan dispersion correction - ok for both bands (band2 looks a bit differerent than usual - it has two peaks, but seems to have a smoothly varying spectrum.
+# start 02.09.2019, 17:00  - end 09.08.2019 - 2:00
+# for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz 
+# NOTE1: Specpol now with low-pass filters; contamination remains between 5.8-6.0 GHz
+# NOTE2: Tried glo_lat_-2.00_0.00, but telescope did not allow; too low
+##########################
+5288	3C286			Pointing	# Col*=-2.0 NulE=10.7 el=67
+5289	3C286			Focus		# zLin=-1.3mm         el=67
+5290	3C286			Pointing	# Col*=-1.5 NulE=6.1  el=67
+5291	3C286			L-Pointing	# failed
+5292	3C286			L-Pointing	# Col*=-1.6 NulE=6.43  el=67
+5293	W3OH			Pointing	# Col*=-6.0 NulE=2.1  el=22
+5294	W3OH			ON-OFF 		# Spectrum ok
+5295	NGC7027			Pointing	# Col*=-9.3 NulE=4.2 el=28
+5296	NGC7027			L-Pointing	# Col*=-15.0 NulE=-4.8 el=32 (strange pointing corrections derived here; don't use for cal)
+5297	2013+37			Pointing	# Col*=-5.2 NulE=4.6  el=33
+5298	2013+37			Pointing	# Col*=-5.8 NulE=5.8  el=33
+5299	GLO_LON_78.00_0.50	OTF		#
+5300	OFF_82.0_4.0_4		ON-OFF		# check off position against 82.0d, 12.0d
+5301 	1334-127		Pointing	# Col*=-13.9 NulE=7.1  el=17
+5302	OFF_0.0_4.0		ON-OFF		# check off position against 0.0d, 8.0d
+5303	OFF_2.0_4.0		ON-OFF		# check off position against 2.0d, 8.0d
+5304	GLO_LAT_-0.00_0.00	OTF		#
+5305	NGC7027			Pointing	# Col*=-2.8 NulE=-4.7 el=60
+5306	NGC7027			Focus		# zLin=-9.2mm el=60 (the system accidentally applied the focus twice)
+###### following scans have bad focus
+5307	NGC7027			Pointing	# Col*=-3.7 NulE=-2.5 el=60   (focus of by 4mm)
+5308	NGC7027			L-Pointing	# Col*=-6.0 NulE=-3.1 el=60   (focus of by 4mm)
+5309	3C286			Pointing	# Col*=-1.9 NulE=-6.5 el=31   (focus of by 4mm)
+5310	1741-038		Pointing	# Col*=-12.6 NulE=-5.5 el=32   (focus of by 4mm)
+5311	GLO_LAT_29.60_0.00	OTF		#    (focus of by 4mm)
+5312	GLO_LAT_29.40_0.00	OTF		#    (focus of by 4mm)
+5313	1741-038		Pointing	# Col*=-11.1 NulE=-14.4 el=21   (focus of by 4mm)
+5314	GLO_LAT_29.20_0.00	OTF		#    (focus of by 4mm)
+5315	2013+37			Pointing	# Col*=-4.6 NulE=-7.5 el=65   (focus of by 4mm)
+5316	GLO_LON_76.50_0.95	OTF		#    (duplicate; focus of by 4mm)# Observations 03-04/09/2019 
+# firmware specpol: band1: ok , band2: ok
+# receiver loading: ok
+# check on scan 5333: specpol chan dispersion correction - ok
+# start 03.09.2019, 16:20 - end 04.09.2019, 2:05
+# for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz 
+# NOTE1: Specpol now with low-pass filters; contamination remains between 5.8-6.0 GHz
+##########################
+5333	3C286			Pointing	# Col*=-1.9 NulE=6.0 el=70
+5334	3C286			Focus		# zLin=-1.6mm
+5335	3C286			Pointing	# Col*=-1.9 NulE=8.0 el=70
+5336	3C286			L-Pointing	# Col*=-2.1 NulE=9.2 el=70
+5337	W3OH			Pointing	# Col*=-5.7 NulE=-5.4 el=22
+5338	W3OH			Pointing	# Col*=-16.0 NulE=0.7 el=22 (waiting for target to rise)
+5339	W3OH			L-Pointing	# Col*=-16.2 NulE=3.1 el=22 (waiting for target to rise)
+5340	W3OH			ON-OFF 		# 
+5341	2013+37			Pointing	# Col*=-8.0 NulE=3.7 el=27
+5342	2013+37			Pointing	# Col*=-17.3 NulE=4.8 el=27
+5343	2013+37			Pointing	# Col*=-14.6 NulE=4.9 el=27
+5344	GLO_LON_76.50_-0.85	OTF		#
+5345	1741-038		Pointing	# Col*=-12.8 NulE=8.2 el=17
+5346	GLO_LAT_29.00_0.00	OTF		#
+5347	1741-038		Pointing	# Col*=-13.2 NulE=1.1 el=33
+5348	GLO_LAT_28.80_0.00	OTF		#
+5349	NGC7027			Pointing	# Col*=-4.9 NulE=-2.9 el=56
+5350	NGC7027			Focus		# zLin=-3.8
+5351	NGC7027			Pointing	# Col*=-3.8 NulE=-1.9 el=56
+5352	NGC7027			L-Pointing	# Col*=-6.7 NulE=-1.7 el=56
+5353	1741-038		Pointing	# Col*=-4.3 NulE=-5.8 el=35
+5354	GLO_LAT_28.60_0.00	OTF		#
+5355	GLO_LAT_29.60_0.00	OTF		#
+5356	1741-038		Pointing	# Col*=-10.9 NulE=-15.5 el=25
+5357	GLO_LAT_29.40_0.00	OTF		#
+5358	1741-038		Pointing	# Col*=-10.6 NulE=-13.6 el=16
+5359	GLO_LAT_29.20_0.00	OTF		#
+5360	OFF_50.0_4.0		ON-OFF		# check against 50.0, 8.0  (clear; some artifacts at 3sig in CH3OH-emis@12kms/H2CO-abs@-50kms)
+5361	2013+37			Pointing	# Col*=-7.1 NulE=-12.2 el=57
+5362	OFF_78.0_4.0_2		ON-OFF		# check against 78.0, 12.0 (clear; some artifacts in CH3OH at 20-25 km/s)
     </div>
   </div>
 </body>
