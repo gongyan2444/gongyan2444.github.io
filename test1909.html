@@ -13444,6 +13444,66 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 20/09/2019-21/09/2019 TEST OBS</span>
+<span class="c1"># firmware specpol: band1: ok (upper panel missaligned by 25), band2: ok </span>
+<span class="c1"># receiver loading: ok</span>
+<span class="c1"># check on scan 6852: specpol chan dispersion correction - ok</span>
+<span class="c1"># start 20.09.2019, 14:00 - end 21.09.2019, 01:00</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz </span>
+<span class="c1"># NOTE1: Specpol now with low-pass filters; contamination remains between 5.8-6.0 GHz</span>
+<span class="c1">##########################test-22-15</span>
+<span class="mi">6851</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.7 NulE=3.2 el=64</span>
+<span class="mi">6852</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Focus</span>		<span class="c1"># zLin=0.2mm</span>
+<span class="mi">6853</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-3.0 NulE=0.1 el=64</span>
+<span class="mi">6854</span>	<span class="n">TESTSOURCE</span>		<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span>		<span class="c1"># 13 31 08.29s 25 30 33.0&quot; (B1950), 3600 t_on. </span>
+<span class="c1">######################### 22-15</span>
+<span class="mi">6855</span>    <span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.9 NulE=2.8 el=69      </span>
+<span class="mi">6856</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">focus</span> 		<span class="c1"># zLin=-0.4mm</span>
+<span class="mi">6857</span>    <span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.7 NulE=3.2 el=69</span>
+<span class="mi">6858</span>    <span class="mi">3</span><span class="n">C286</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># scanning length too short</span>
+<span class="mi">6859</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">L</span><span class="o">-</span><span class="n">pointing</span>	<span class="c1"># Col*=-2.4 NulE=4.9 el=68 </span>
+<span class="mi">6860</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-6.2 NulE=6.8 el=24</span>
+<span class="mi">6861</span>	<span class="n">GLO_LON_49</span><span class="o">.</span><span class="mf">00_0.90</span>	<span class="n">OTF</span>		
+<span class="c1">######################## K band</span>
+<span class="mi">6862</span>	<span class="n">NGC7027</span>		 	<span class="n">Pointing</span>	<span class="c1"># Col*=-2.8 NulE=0.5 el=36</span>
+<span class="mi">6863</span>	<span class="n">NGC7027</span>			<span class="n">focus</span>		<span class="c1"># zLin=5.8mm</span>
+<span class="mi">6864</span>	<span class="n">NGC7027</span>			<span class="n">focus</span>		<span class="c1"># zLin=6.0mm</span>
+<span class="mi">6865</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-10.0 NulE=7.0 el=38</span>
+<span class="mi">6866</span>	<span class="n">NRAO530</span>			<span class="n">Pointing</span>	<span class="c1"># cancel, do L-pointing</span>
+<span class="mi">6867</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-7.3 NulE=10.6 el=22</span>
+<span class="mi">6868</span>	<span class="n">G24</span>			<span class="n">On</span><span class="o">/</span><span class="n">OFF</span>          <span class="c1"># cancel, do nearby pointing </span>
+<span class="mi">6869</span>	<span class="n">NRAO530</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-9.5 NulE=13.6 el=23</span>
+<span class="mi">6870</span>	<span class="n">G24</span>			<span class="n">On</span><span class="o">/</span><span class="n">OFF</span>		<span class="c1"># </span>
+<span class="mi">6871</span>	<span class="n">NRAO530</span>			<span class="n">pointing</span>	<span class="c1"># Col*=-13.3 NulE=-1.7 el=34</span>
+<span class="mi">6872</span>	<span class="n">G24</span>			<span class="n">On</span><span class="o">/</span><span class="n">OFF</span>		<span class="c1"># low spectral resolution</span>
+<span class="mi">6873</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>		<span class="n">pointing</span>	<span class="c1"># Col*=-13.3 NulE=-1.7 el=28</span>
+<span class="mi">6874</span>	<span class="n">G24</span>			<span class="n">On</span><span class="o">/</span><span class="n">OFF</span>		<span class="c1"># VLBA 500MHz</span>
+<span class="c1">####################### C band </span>
+<span class="mi">6875</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-14.0 NulE=-5.4 el=28</span>
+<span class="mi">6876</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">focus</span>		<span class="c1"># zLin=-5.4mm</span>
+<span class="mi">6877</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-6.0 NulE=-7.9 el=28</span>
+<span class="mi">6878</span>	<span class="n">W3OH</span>			<span class="n">pointing</span>	<span class="c1"># Col*=-10.3 NulE=-6.5 el=60</span>
+<span class="mi">6879</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">/</span><span class="n">OFF</span>		<span class="c1">#</span>
+<span class="mi">6880</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-10.3 NulE=-6.5 el=60</span>
+<span class="mi">6881</span>	<span class="n">GLO_LON_49</span><span class="o">.</span><span class="mf">00_0.70</span>	<span class="n">OTF</span>		
+<span class="mi">6882</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-8.9 NulE=-3.5	</span>
+<span class="mi">6883</span>	<span class="n">GLO_LON_49</span><span class="o">.</span><span class="mf">50_0.50</span>	<span class="n">OTF</span>
+<span class="mi">6884</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-8.9 NulE=-9.2</span>
+<span class="mi">6885</span>	<span class="n">GLO_LON_49</span><span class="o">.</span><span class="mf">50_0.30</span>	<span class="n">OTF</span>
+<span class="mi">6886</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-5.0 NulE=-7.8</span>
+<span class="mi">6887</span>	<span class="n">GLO_LON_49</span><span class="o">.</span><span class="mf">50_0.10</span>	<span class="n">OTF</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
