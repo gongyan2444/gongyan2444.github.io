@@ -13504,6 +13504,84 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 25/09/2019 </span>
+<span class="c1"># firmware specpol: band1: ok (upper panel missaligned by 25), band2: ok </span>
+<span class="c1"># receiver loading: ok</span>
+<span class="c1"># check on scan 6979: specpol chan dispersion correction - ok</span>
+<span class="c1"># start 25.09.2019, 16:00 - end</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz </span>
+<span class="c1"># NOTE1: Specpol now with low-pass filters; contamination remains between 5.8-6.0 GHz</span>
+<span class="c1"># NOTE2: Tcal seemed a bit higher; Got information from Effelsberg that something was changed on 25/09/2019.</span>
+<span class="c1"># NOTE3: Today: re-observations from 20/21 August.</span>
+<span class="c1"># NOTE3: Discussion with Peter Mueller: Power was lacking in bb2 for these scans WFFTS/SPECPOL</span>
+<span class="c1"># NOTE3: Clearly visible in the pointing scans! For future, always check that power is there</span>
+<span class="c1"># NOTE3: in the pointing</span>
+<span class="c1">##########################</span>
+<span class="mi">6979</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=0.5 NulE=5.5 el=64</span>
+<span class="mi">6980</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Focus</span>		<span class="c1"># zLin=1.5mm</span>
+<span class="mi">6981</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-6.0 NulE=4.5 el=63.</span>
+<span class="mi">6982</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-4.0 NulE=7.0 el=63.</span>
+<span class="mi">6983</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Calmap</span>		<span class="c1">#</span>
+<span class="mi">6984</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.6 NulE=11.3 el=23.</span>
+<span class="mi">6985</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># peak intensity off by ~2000 K</span>
+<span class="mi">6986</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=8.2 NulE=5.7 el=40</span>
+<span class="mi">6987</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-12.4 NulE=6.5 el=23.</span>
+<span class="mi">6988</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># still off.</span>
+<span class="mi">6989</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=6.9 NulE=2.9 el=40</span>
+<span class="mi">6990</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=3.7 NulE=1.5 el=36 #tcal~1.95K; seems ok</span>
+<span class="mi">6991</span>	<span class="n">GLO_LAT_77</span><span class="o">.</span><span class="mf">50_0.50</span> 	<span class="n">OTF</span>		<span class="c1"># </span>
+<span class="mi">6992</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=7.9 NulE=1.3 el=49.</span>
+<span class="mi">6993</span>	<span class="n">GLO_LAT_77</span><span class="o">.</span><span class="mf">40_0.50</span> 	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">6994</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.7 NulE=-6.8 el=40.</span>
+<span class="mi">6995</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Calmap</span>		<span class="c1">#</span>
+<span class="mi">6996</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># before pointing/focus</span>
+<span class="mi">6997</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=0.8 NulE=0.4 el=57</span>
+<span class="mi">6998</span>	<span class="n">NGC7027</span>			<span class="n">Focus</span>		<span class="c1"># zLin=-2.7</span>
+<span class="mi">6999</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=0.7 NulE=-0.8 el=57</span>
+<span class="mi">7000</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-2.1 NulE=-1.7 el=57</span>
+<span class="mi">7001</span>	<span class="n">GLO_LAT_77</span><span class="o">.</span><span class="mf">30_0.50</span> 	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">7002</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=5.3 NulE=-7.4 el=25.</span>
+<span class="mi">7003</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Calmap</span>		<span class="c1">#</span>
+<span class="mi">7004</span> 	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-0.4 NulE=1.4 el=74</span>
+<span class="mi">7005</span>	<span class="n">GLO_LAT_77</span><span class="o">.</span><span class="mf">20_0.50</span> 	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">7006</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-0.4 NulE=6.4 el=79</span>
+<span class="mi">7007</span>	<span class="n">NGC7027</span>			<span class="n">Focus</span>		<span class="c1"># zLin=-3.3</span>
+<span class="mi">7008</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-0.8 NulE=6.5 el=79</span>
+<span class="mi">7009</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-5.3 NulE=-7.1 el=24</span>
+<span class="mi">7010</span>	<span class="n">GLO_LON_29</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="err">—</span><span class="mf">0.50</span>	<span class="n">OTF</span>		<span class="c1"># aborted, spectrum strange</span>
+<span class="mi">7011</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-7.6 NulE=6.5 el=46.</span>
+<span class="mi">7012</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># peak intensity off off by ~2000K</span>
+<span class="mi">7015</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1">#</span>
+<span class="mi">7016</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># </span>
+<span class="mi">7017</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># </span>
+<span class="mi">7018</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># # after detailled checks - all W3OH off</span>
+<span class="mi">7019</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># varzoom; freq=6.835GHz</span>
+<span class="mi">7020</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># varzoom; freq=6.110GHz</span>
+<span class="mi">7021</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># varzoom; freq=6.824GHz</span>
+<span class="mi">7022</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># reload glostar setup; failed</span>
+<span class="mi">7023</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span> 		<span class="c1"># reload glostar setup; succes</span>
+<span class="mi">7025</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>		<span class="n">Pointing</span>	<span class="c1"># wrong band</span>
+<span class="mi">7027</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=3.6 NulE=-8.0 el=27</span>
+<span class="mi">7028</span>	<span class="n">GLO_LON_29</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="err">—</span><span class="mf">0.50</span>	<span class="n">OTF</span>		<span class="c1"># </span>
+<span class="mi">7029</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-7.1 NulE=-7.5 el=58.</span>
+<span class="mi">7030</span>	<span class="n">GLO_LAT_77</span><span class="o">.</span><span class="mf">10_0.50</span> 	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">7031</span>	<span class="n">GLO_LAT_77</span><span class="o">.</span><span class="mf">00_0.50</span> 	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">7032</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.2 NulE=-6.2 el=42</span>
+<span class="mi">7033</span>	<span class="n">GLO_LAT_78</span><span class="o">.</span><span class="mf">90_0.50</span> 	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">7034</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=0.7 NulE=-0.8 el=57</span>
+<span class="mi">7035</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-2.1 NulE=-1.7 el=57</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
