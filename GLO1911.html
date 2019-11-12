@@ -13179,6 +13179,54 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 11/11/2019 </span>
+<span class="c1"># firmware specpol: band1: ok (upper panel missaligned by 25), band2: ok (upper panel missaligned by 12)</span>
+<span class="c1"># receiver loading: ok</span>
+<span class="c1"># check on scan : specpol chan dispersion correction - ok</span>
+<span class="c1"># start 11.11.2019, 19:25 - end 23:00 (bb2 error until 20:07)</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz </span>
+<span class="c1"># NOTE1: Specpol now with low-pass filters; contamination between 5.8-6.0 GHz has disappeared!</span>
+<span class="c1"># NOTE2: Tcal --&gt; Hardware change (now it should be consistently at 3-4 K)</span>
+<span class="c1"># NOTE3: Two problems: 1)No power in bb2 (operator could confirm looking at the WFFTS vnc). 2) FW connection to specpol broke.</span>
+<span class="o">--&gt;</span> <span class="n">solution</span> <span class="n">two</span> <span class="n">both</span><span class="p">:</span>
+<span class="mi">1</span><span class="p">)</span> <span class="n">restart</span> <span class="n">specpol</span> <span class="p">(</span><span class="n">python</span> <span class="n">comm</span><span class="o">.</span><span class="n">py</span><span class="o">--&gt;</span> <span class="n">kill</span><span class="o">--&gt;</span> <span class="n">python</span> <span class="o">-</span><span class="n">u</span> <span class="n">SpecPolRingNbe</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;&gt;</span> <span class="n">Log</span><span class="o">...</span><span class="p">)</span>
+<span class="mi">2</span><span class="p">)</span> <span class="n">operator</span> <span class="n">restarts</span> <span class="n">telescope</span> <span class="n">software</span><span class="o">+</span><span class="n">fitswriter</span>
+<span class="mi">3</span><span class="p">)</span> <span class="n">reload</span> <span class="n">the</span> <span class="n">receiver</span>
+<span class="c1">##########################</span>
+<span class="c1">### no power in bb2 (don&#39;t use!)</span>
+<span class="mi">1387</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-9.1 NulE=4.6 el=75 #no power in bb2</span>
+<span class="mi">1388</span>	<span class="n">NGC7027</span>			<span class="n">Focus</span>		<span class="c1"># zLin=-2.6mm              #no power in bb2 (focus with optocbe/had power!)</span>
+<span class="mi">1389</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-7.7 NulE=6.1 el=75 #no power in bb2</span>
+<span class="mi">1390</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-4.1 NulE=9.0 el=75 #no power in bb2</span>
+<span class="mi">1391</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.3 NulE=2.8 el=75 #no power in bb2</span>
+<span class="mi">1392</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="c1"># no power in bb2 (noted because pointing scans very noisy; at the same time optocbe good)</span>
+<span class="mi">1394</span>	<span class="n">W3OH</span>			<span class="n">On</span><span class="o">-</span><span class="n">OFF</span>		<span class="c1"># no power in bb2</span>
+<span class="c1">### problem fixed</span>
+<span class="mi">1395</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-7.9 NulE=10.0 el=60</span>
+<span class="mi">1396</span>	<span class="n">W3OH</span>			<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span>		<span class="c1"># </span>
+<span class="mi">1397</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-4.2 NulE=1.3 el=37</span>
+<span class="mi">1398</span>	<span class="n">GLO_LON_49</span><span class="o">.</span><span class="mf">00_1.05</span>	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">1399</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.5 NulE=-0.2 el=58</span>
+<span class="mi">1400</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-7.1 NulE=0.8 el=58</span>
+<span class="mi">1401</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-4.1 NulE=0.4 el=47</span>
+<span class="mi">1402</span>	<span class="n">GLO_LON_80</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.70</span>	<span class="n">OTF</span>		<span class="c1">#</span>
+<span class="mi">1403</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.6 NulE=-1.8 el=37</span>
+<span class="mi">1404</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-4.1 NulE=-1.4 el=37</span>
+<span class="mi">1405</span>	<span class="n">OFF_85</span><span class="o">.</span><span class="mf">5_1.5</span>		<span class="n">ON</span><span class="o">-</span><span class="n">OFF</span>		<span class="c1"># check against 88.0 -1.0</span>
+<span class="mi">1406</span>	<span class="mi">3</span><span class="n">C138</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-4.4 NulE=1.9 el=34.</span>
+<span class="mi">1407</span>	<span class="mi">3</span><span class="n">C138</span>			<span class="n">Calmap</span>		<span class="c1"># Calmap to check pol. </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
