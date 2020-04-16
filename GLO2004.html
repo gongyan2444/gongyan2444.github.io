@@ -13085,7 +13085,7 @@ div#notebook {
 <span class="c1"># start 15.04.2020, 02:00 - end</span>
 <span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz </span>
 <span class="c1">##########################</span>
-<span class="c1">######    Low power at 7 GHz ? #######</span>
+<span class="c1">######    Low power at 7 GHz ?! #######</span>
 <span class="mi">3026</span>    <span class="mi">3</span><span class="n">C286</span>                   <span class="c1"># Pointing COl*=-0.6&quot; NulE=2.0&quot;</span>
 <span class="mi">3027</span>    <span class="mi">3</span><span class="n">C286</span>                   <span class="c1"># focus  z=-2.7mm</span>
 <span class="mi">3028</span>    <span class="mi">3</span><span class="n">C286</span>                   <span class="c1"># Pointing Col*=-0.6&quot; NulE=3.5&quot;</span>
@@ -13108,6 +13108,47 @@ div#notebook {
 <span class="mi">3050</span>    <span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>                <span class="c1"># Pointing  Col*=6.5&quot; NulE=-8.7&quot;</span>
 <span class="mi">3051</span>    <span class="n">GLO_LON_51</span><span class="o">.</span><span class="mf">00_0.30</span>      <span class="c1"># OTF, Low power at 7 GHz</span>
 <span class="mi">3052</span>    <span class="n">GLO_LON_51</span><span class="o">.</span><span class="mf">00_0.10</span>      <span class="c1"># OTF, Low power at 7 GHz</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 16/04/2020; Rugel</span>
+<span class="c1"># firmware specpol: specpol had already been started and firmware loaded</span>
+<span class="c1"># receiver loading: needed to restart specpol; after that ok</span>
+<span class="c1"># check on scan 3083: specpol chan dispersion correction: ok; power 7 GHz: seemed fine</span>
+<span class="c1"># start 16.12.2019, 02:00; end 16.12.2019, 08:00</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
+<span class="c1"># note: In the scripts for latitude scans in GC, changed to negative scan velocity to minize slewing to off (SCANVelocity -90&quot;) </span>
+<span class="c1">##########################</span>
+<span class="mi">3081</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-1.1&quot; NulE=5.2&quot; el=68</span>
+<span class="mi">3082</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Focus</span>		<span class="c1"># zlin=-1.6mm</span>
+<span class="mi">3083</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=0.1&quot;  NulE=6.6&quot; el=68</span>
+<span class="mi">3084</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-2.4&quot; NulE=6.6&quot; el=68</span>
+<span class="mi">3085</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Calmap</span>		<span class="c1"># </span>
+<span class="mi">3086</span>    <span class="n">W3OH</span>                    <span class="n">Pointing</span>        <span class="c1"># Col*=1.3   NulE=4.5 el=22</span>
+<span class="mi">3087</span>    <span class="n">W3OH</span>                    <span class="n">ONOFF</span>           <span class="c1"># ok</span>
+<span class="mi">3088</span>    <span class="n">NGC7027</span>                 <span class="n">Pointing</span>	<span class="c1"># Col*=5.7&quot;  NulE=-3.7&quot; el=30</span>
+<span class="mi">3089</span>    <span class="n">NGC7027</span>                 <span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=1.5&quot;  NulE=-3.6&quot; el=30</span>
+<span class="mi">3090</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>                <span class="n">Pointing</span>	<span class="c1"># Col*=9.9&quot;  NulE=-1.2&quot; el=32</span>
+<span class="mi">3091</span>	<span class="n">GLO_LON_51</span><span class="o">.</span><span class="mf">00_0.50</span>	<span class="n">OTF</span>		<span class="c1"># el=30-40</span>
+<span class="mi">3092</span>	<span class="mi">3</span><span class="n">C286</span>                 	<span class="n">Pointing</span>	<span class="c1"># Col*=2.1&quot;  NulE=-5.0&quot; el=50</span>
+<span class="mi">3093</span>	<span class="mi">3</span><span class="n">C286</span>                 	<span class="n">Pointing</span>	<span class="c1"># Col*=0.9&quot;  NulE=-6.7&quot; el=50</span>
+<span class="mi">3094</span>	<span class="n">NRAO530</span>                 <span class="n">Pointing</span>	<span class="c1"># Col*=-3.6&quot; NulE=-11.8&quot;el=25</span>
+<span class="mi">3095</span>	<span class="n">GLO_LAT_0</span><span class="o">.</span><span class="mf">15_0.00</span>	<span class="n">OTF</span>		<span class="c1"># el=8.9-12.3</span>
+<span class="mi">3096</span>	<span class="n">GLO_LAT_</span><span class="o">-</span><span class="mf">1.95_0</span><span class="o">.</span><span class="mi">00</span>	<span class="n">OTF</span>		<span class="c1"># el=8.1-12.3</span>
+<span class="mi">3097</span>	<span class="n">GLO_LAT_</span><span class="o">-</span><span class="mf">0.15_0</span><span class="o">.</span><span class="mi">00</span>	<span class="n">OTF</span>		<span class="c1"># el=9.3-12.1</span>
+<span class="mi">3098</span>	<span class="mi">3</span><span class="n">C286</span>                 	<span class="n">Pointing</span>	<span class="c1"># Col*=-14.1&quot;  NulE=-13.0&quot; el=30</span>
+<span class="mi">3099</span>	<span class="mi">3</span><span class="n">C286</span>                 	<span class="n">Pointing</span>	<span class="c1"># Col*=-17.6&quot;  NulE=-13.5&quot; el=30</span>
+<span class="mi">3100</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>              	<span class="n">Pointing</span>	<span class="c1"># Col*=-17.3&quot;  NulE=-9.5&quot;  el=60</span>
+<span class="mi">3101</span>	<span class="n">GLO_LON_51</span><span class="o">.</span><span class="mf">00_0.30</span>	<span class="n">OTF</span>		<span class="c1"># el=53-57</span>
 </pre></div>
 
     </div>
