@@ -1,0 +1,28 @@
+!! in case you want to use the lastest class version to modify the frequency of the data obtained with PMO-13.7m 
+!! You have to read the rest frequency and reference channel from the observation log of PMO-13.7m
+!!
+
+!!!!!!!! This is an example !!!!!!!!!!!!!!!!!!!!!!!
+
+file in try3.sdd                !! read the data 
+set variable SPECTRO write      !! allow to correct for the head of the spectra
+find 
+sic delete formary.14m 
+file out formary.14m single
+for i 1 to found 
+get next
+modify doppler 0                !! already LSR corrected  
+let r%head%SPE%restf 86847.01   !! rest frequency in the 
+let r%head%SPE%rchan 6996.4
+
+write 
+next 
+
+
+
+file in formary.14m 
+find 
+aver 
+modify freq 86754.28840         !! frequency for other lines, H13CO+(1-0) here
+plot 
+
