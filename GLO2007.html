@@ -13329,6 +13329,58 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 15/07/2020; Rugel</span>
+<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay 21 and 22</span>
+<span class="c1"># receiver loading: ok </span>
+<span class="c1"># check on scan 990: specpol chan dispersion correction: ok; power 7 GHz: seemed fine; W3OH fine</span>
+<span class="c1"># start 14.7.2020, 21:15; 15.7.2020, 7:15 ; lost 1 h (20-21) b/c of telescope problem</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
+<span class="c1"># rain: CEST 1:30-3:30; affected: GLO_LON_25.40_0.00, GLO_LON_47.00_-0.60</span>
+<span class="c1">##########################</span>
+<span class="mi">990</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-4.4&quot;  NulE=9.1&quot;   el=61</span>
+<span class="mi">991</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Focus</span>		<span class="c1"># zlin=-1.7mm </span>
+<span class="mi">992</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-5.5&quot;  NulE=9.1&quot;   el=61</span>
+<span class="mi">993</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-5.9&quot;  NulE=9.6&quot;   el=61</span>
+<span class="mi">994</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Calmap</span>		<span class="c1"># el=61</span>
+<span class="mi">995</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-4.1&quot;  NulE=3.2&quot;   el=23</span>
+<span class="mi">996</span>	<span class="n">W3OH</span>			<span class="n">ONOFF</span>		<span class="c1"># </span>
+<span class="mi">997</span>	<span class="n">W3OH</span>			<span class="n">ONOFF</span>		<span class="c1"># </span>
+<span class="mi">998</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.2&quot; NulE=0.3&quot; el=40</span>
+<span class="mi">999</span>	<span class="n">NGC7027</span>			<span class="n">Focus</span>		<span class="c1"># zlin=-1.9mm</span>
+<span class="mi">1000</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-7.3&quot; NulE=1.0&quot; el=40</span>
+<span class="mi">1001</span>	<span class="n">NRAO530</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-7.4&quot; NulE=-2.0&quot; el=24</span>
+<span class="mi">1002</span>	<span class="n">GLO_LAT_1</span><span class="o">.</span><span class="mf">05_0.00</span>	<span class="n">OTF</span>		<span class="c1"># el=9-12</span>
+<span class="mi">1003</span>	<span class="n">GLO_LAT_</span><span class="o">-</span><span class="mf">1.15_0</span><span class="o">.</span><span class="mi">00</span>	<span class="n">OTF</span>		<span class="c1"># el=8-12</span>
+<span class="mi">1004</span>	<span class="n">GLO_LAT_0</span><span class="o">.</span><span class="mf">95_0.00</span>	<span class="n">OTF</span>		<span class="c1"># el=11-12</span>
+<span class="mi">1005</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=4.3&quot;  NulE=-7.2&quot;   el=34</span>
+<span class="mi">1006</span>	<span class="mi">3</span><span class="n">C286</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-2.6&quot;  NulE=-7.4&quot;   el=34</span>
+<span class="mi">1007</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-8.2&quot; NulE=-4.3&quot; el=34</span>
+<span class="mi">1008</span>	<span class="n">GLO_LON_25</span><span class="o">.</span><span class="mf">60_0.00</span>	<span class="n">OTF</span>		<span class="c1"># el=30-33</span>
+<span class="mi">1009</span>	<span class="n">GLO_LON_25</span><span class="o">.</span><span class="mf">40_0.00</span>	<span class="n">OTF</span>		<span class="c1"># el=25-31 ; RAIN</span>
+<span class="mi">1010</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=-2.2&quot; NulE=-8.6&quot; el=35 ; RAIN, baseline a bit bad</span>
+<span class="mi">1011</span>	<span class="n">GLO_LON_47</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.60</span>	<span class="n">OTF</span>		<span class="c1"># el=38-48 (re-observed b/c prev. obs. incomplete); RAIN</span>
+<span class="mi">1012</span>	<span class="n">GLO_LON_47</span><span class="o">.</span><span class="mf">00_0.80</span>	<span class="n">OTF</span>		<span class="c1"># el=27-39 (re-observed b/c prev. obs. too low)</span>
+<span class="mi">1013</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="c1"># Col*=0.1&quot; NulE=-9.1&quot; el=35</span>
+<span class="mi">1014</span>	<span class="n">GLO_LON_59</span><span class="o">.</span><span class="mf">80_0.00</span>	<span class="n">OTF</span>		<span class="c1"># el=27-40 (re-observed b/c prev. obs. incomplete)</span>
+<span class="mi">1015</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-1.5&quot; NulE=-8.3&quot; el=54</span>
+<span class="mi">1016</span>	<span class="n">NGC7027</span>			<span class="n">Focus</span>		<span class="c1"># zlin=-1.3mm</span>
+<span class="mi">1017</span>	<span class="n">NGC7027</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-3.3&quot; NulE=-6.9&quot; el=54</span>
+<span class="mi">1018</span>	<span class="n">NGC7027</span>			<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-4.0&quot; NulE=-5.9&quot; el=54</span>
+<span class="mi">1019</span>	<span class="mi">3</span><span class="n">C138</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-0.5&quot; NulE=-5.6&quot; el=28</span>
+<span class="mi">1020</span>	<span class="mi">3</span><span class="n">C138</span>			<span class="n">Pointing</span>	<span class="c1"># Col*=-3.5&quot; NulE=-2.5&quot; el=28</span>
+<span class="mi">1021</span>	<span class="mi">3</span><span class="n">C138</span>			<span class="n">Calmap</span>		<span class="c1"># </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
