@@ -1,0 +1,23 @@
+file in ../orion-kl-sp_v3.bas
+find
+ge f
+modify freq 18196.226
+sic delete hc3n.100m
+file out hc3n.100m single
+set unit v f
+set mod y t
+se mod x -100 100
+write
+
+
+file in hc3n.100m
+find
+get f
+set win -30 30 
+base 0 
+p
+method hfs hc3n_hfs.dat
+mini
+visu
+
+
