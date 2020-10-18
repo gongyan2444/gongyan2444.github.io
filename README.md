@@ -1,4 +1,4 @@
-# [Yan Gong's homepage](http://gongyan2444.github.io)
+## [Yan Gong's homepage](http://gongyan2444.github.io)
 
 This is based on the [Landing Page](http://startbootstrap.com/template-overviews/landing-page/) template for [Bootstrap](http://getbootstrap.com/).
 
