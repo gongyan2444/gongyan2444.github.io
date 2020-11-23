@@ -13111,6 +13111,116 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 21-21/11/2020</span>
+<span class="c1">#start 21.11.2020, 17:55 - end 21.11.2020, 21:54 CEST</span>
+<span class="c1">#firmware special: band1: 21, band2:-2</span>
+<span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
+<span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
+<span class="c1">#start 21.11.2020, 18:00 - end 21.11.2020, 20:30</span>
+<span class="c1">#NOTE: 1, vncviewer observer8:20; ps: 4america</span>
+       <span class="mi">2</span><span class="p">,</span> <span class="n">vncviewer</span> <span class="n">observer8</span><span class="p">:</span><span class="mi">30</span><span class="p">;</span> <span class="n">ps</span><span class="p">:</span> <span class="mi">4</span><span class="n">america</span>
+       <span class="mi">3</span><span class="p">,</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">Y</span> <span class="n">obseff</span><span class="nd">@observer8</span> <span class="n">ps</span><span class="p">:</span> <span class="n">us20vote</span>
+<span class="c1">#######setup steps#################</span>
+<span class="c1">#1,startup: project code: 107-20(wrong); Directory: /home/obseff/ygong/</span>
+<span class="c1">#2,specpol: 1, attenuation value 0.5; load special firmware False; restart** False</span>
+<span class="c1">#           2, attenuation value -1 ; load special firmware True; restart** False</span>
+<span class="c1">#           3, wait for the load firmware successfully and delay, </span>
+<span class="c1">#           4, attenuation value -1 ; load special firmware False; restart** True</span>
+<span class="c1">#           5, wait for the restarted successfully</span>
+<span class="c1">#3,Secondary: receiver: s45mm; version: cband_spec_plus_zooms_plus_polarimeter_2phases; freq:6GHz; load </span>
+<span class="c1">#4, pointing; focus; pointing; Lpointing;</span>
+<span class="c1">#5, observationClients: FeBe: s45mm-SPECPOL; BE section: 05 (BB-02 7000m FEED-01 X), zoom in the spectroscopy and press t to select the freq 6.7GHz; range: 6600-6730 MHz; </span>
+<span class="c1">#6, mapping 3c286: Mapping; @Cal3c286</span>
+<span class="c1">#7, mapping target: PSwitch; @mapnew/glo_lat_59.00_0.20</span>
+<span class="c1">#######setup finish#################</span>
+
+<span class="c1">#########################</span>
+<span class="c1">###    3008 Temp:3.8degree; Winds=3.5m/s; col*=-8.5   NulE=6.7 Z = -2.9####</span>
+<span class="c1">#      3009       NGC7027                      pointing      col*=1.1 NulE=6.3  </span>
+<span class="c1">#      3010       NGC7027                      focus         Z = -2.0   </span>
+<span class="c1">#      3011       NGC7027                      pointing      col*=0.6 NulE=5.2 </span>
+<span class="c1">#      3012       1749+096                     pointing      col*=-3.3  NulE=1.3</span>
+<span class="c1">###scan 3013 has been killed by operator accidentally###</span>
+<span class="c1">#      3014       1923+210                     pointing      col*=-4.5  NulE=0.2</span>
+<span class="c1">#      3015       GLO_LAT_42.00_0.00           Mapping       </span>
+<span class="c1">#      3016       GLO_LON_59.00_0.20           Mapping         </span>
+<span class="c1">#      3017       NGC7027                      pointing      col*=-3.0 NulE=-0.3 </span>
+<span class="c1">#      3018       NGC7027                      Lpointing     col*=-4.1    NulE=-1.5  </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 22-22/11/2020</span>
+<span class="c1">#start 22.11.2020, 13:00 - end 22.11.2020, 20:30 CEST</span>
+<span class="c1">#firmware special: band1: 21, band2:10</span>
+<span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
+<span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
+<span class="c1">#start 21.11.2020, 18:00 - end 21.11.2020, 20:30</span>
+<span class="c1">#NOTE: 1, vncviewer observer8:20; ps: 4america</span>
+       <span class="mi">2</span><span class="p">,</span> <span class="n">vncviewer</span> <span class="n">observer8</span><span class="p">:</span><span class="mi">30</span><span class="p">;</span> <span class="n">ps</span><span class="p">:</span> <span class="mi">4</span><span class="n">america</span>
+       <span class="mi">3</span><span class="p">,</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">Y</span> <span class="n">obseff</span><span class="nd">@observer8</span> <span class="n">ps</span><span class="p">:</span> <span class="n">us20vote</span>
+<span class="c1">#######setup steps#################</span>
+<span class="c1">#1,startup: project code: 102-20; Directory: /home/obseff/ygong/</span>
+<span class="c1">#2,specpol: 1, attenuation value 0.5; load special firmware False; restart** False</span>
+<span class="c1">#           2, attenuation value -1 ; load special firmware True; restart** False</span>
+<span class="c1">#           3, wait for the load firmware successfully and delay, </span>
+<span class="c1">#           4, attenuation value -1 ; load special firmware False; restart** True</span>
+<span class="c1">#           5, wait for the restarted successfully</span>
+<span class="c1">#3,Secondary: receiver: s45mm; version: cband_spec_plus_zooms_plus_polarimeter_2phases; freq:6GHz; load </span>
+<span class="c1">#4, pointing; focus; pointing; Lpointing;</span>
+<span class="c1">#5, observationClients: FeBe: s45mm-SPECPOL; BE section: 05 (BB-02 7000m FEED-01 X), zoom in the spectroscopy and press t to select the freq 6.7GHz; range: 6600-6730 MHz; </span>
+<span class="c1">#6, mapping 3c286: Mapping; @Cal3c286</span>
+<span class="c1">#7, mapping target: PSwitch; @mapnew/glo_lat_59.00_0.20</span>
+<span class="c1">#######setup finish#################</span>
+
+<span class="c1">#########################</span>
+<span class="c1">###    3164 Temp:6.9degree; Winds=4.2m/s; col*=-4.1   NulE=-1.5 Z = -2.0####</span>
+<span class="c1">#use project ID 107-20</span>
+<span class="c1">#      3165       3C286                      pointing      col*=-0.5  NulE=0.3 </span>
+<span class="c1">#      3166       3C286                      focus         Z = 3.6  </span>
+<span class="c1">#      3167       3C286                      pointing      col*=0.5 NulE=0.3</span>
+<span class="c1">##restar the online plotter twice###</span>
+<span class="c1">#revised the project ID 102-20</span>
+<span class="c1">#      3168       3C286                      pointing      col*=0.5 NulE=0.3</span>
+<span class="c1">#      3169       3C286                      pointing      col*=-3.4 NulE=0.3</span>
+<span class="c1">#      3170       3C286                      focus         Z = 0.2  </span>
+<span class="c1">#      3171       3C286                      pointing      col*=-4.8 NulE=2.1</span>
+<span class="c1">#      3172       3C286                      Mapping       </span>
+<span class="c1">#      3173       NRAO530                     pointing      col*=-10.6  NulE=-9.6</span>
+<span class="c1">#      3174       GLO_LAT_23.00_-0.80           Mapping</span>
+<span class="c1">##we do Lpointing here in case of rainning later,###</span>
+<span class="c1">#      3175       NGC7027                      pointing      col*=6.0   NulE=1.5 </span>
+<span class="c1">#      3176       NGC7027                      focus         Z = -0.9   </span>
+<span class="c1">#      3177       NGC7027                      pointing      col*=6.3  NulE=3.4</span>
+<span class="c1">#      3178       NGC7027                      Lpointing      col*=5.7 NulE=4.9</span>
+<span class="c1">#      3179       1749+096                     pointing      col*=-5.1  NulE=9.8 </span>
+<span class="c1">#      3180       GLO_LON_43.00_-1.00           Mapping            </span>
+<span class="c1">#      3181       GLO_LON_43.00_-0.80           Mapping    </span>
+<span class="c1">#      3182       1749+096                     pointing      col*=-1.6   NulE=-0.1 </span>
+<span class="c1">#      3183       GLO_LON_43.00_-0.60           Mapping         </span>
+<span class="c1">#      3184       GLO_LON_59.00_0.40            Mapping    </span>
+<span class="c1">#      3185       W3OH                     pointing      col*=0.7    NulE=7.5 </span>
+<span class="c1">#      3186       W3OH                     pswitch/on-off        </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
