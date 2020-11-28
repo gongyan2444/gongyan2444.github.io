@@ -13122,9 +13122,6 @@ div#notebook {
 <span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
 <span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
 <span class="c1">#start 21.11.2020, 18:00 - end 21.11.2020, 20:30</span>
-<span class="c1">#NOTE: 1, vncviewer observer8:20; ps: 4america</span>
-       <span class="mi">2</span><span class="p">,</span> <span class="n">vncviewer</span> <span class="n">observer8</span><span class="p">:</span><span class="mi">30</span><span class="p">;</span> <span class="n">ps</span><span class="p">:</span> <span class="mi">4</span><span class="n">america</span>
-       <span class="mi">3</span><span class="p">,</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">Y</span> <span class="n">obseff</span><span class="nd">@observer8</span> <span class="n">ps</span><span class="p">:</span> <span class="n">us20vote</span>
 <span class="c1">#######setup steps#################</span>
 <span class="c1">#1,startup: project code: 107-20(wrong); Directory: /home/obseff/ygong/</span>
 <span class="c1">#2,specpol: 1, attenuation value 0.5; load special firmware False; restart** False</span>
@@ -13211,6 +13208,61 @@ div#notebook {
 <span class="c1">#      3184       GLO_LON_59.00_0.40            Mapping    </span>
 <span class="c1">#      3185       W3OH                     pointing      col*=0.7    NulE=7.5 </span>
 <span class="c1">#      3186       W3OH                     pswitch/on-off        </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 23/11/2020;</span>
+<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay 1 12</span>
+<span class="c1"># receiver loading:  ok</span>
+<span class="c1"># start 23.11.2020; start at 16:00; 23.11.2020, 20:30</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
+<span class="c1">###############################################################################</span>
+<span class="mi">3323</span>	<span class="n">NGC7027</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=1.8&quot; NulE=9.8&quot; el=76</span>
+<span class="mi">3324</span>	<span class="n">NGC7027</span>                 <span class="n">focus</span>     	<span class="c1"># z=-2.6mm</span>
+<span class="mi">3325</span>	<span class="n">NGC7027</span>   	        <span class="n">Pointing</span>  	<span class="c1"># Col*=1.7&quot; NulE=12.6&quot; el=76 </span>
+<span class="mi">3326</span>    <span class="n">NGC7027</span>                 <span class="n">L</span><span class="o">-</span><span class="n">pointing</span>      <span class="c1"># Col*=-0.1&quot; NulE=9.6&quot; el=76 </span>
+<span class="mi">3327</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>          	<span class="n">Pointing</span>     	<span class="c1"># Col*=-0.1&quot; NulE=3.8&quot; el=26 </span>
+<span class="mi">3328</span>	<span class="n">GLO_LAT_22</span><span class="o">.</span><span class="mf">80_0.00</span>     	<span class="n">OTF</span>     	<span class="c1"># </span>
+<span class="mi">3329</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>     	        <span class="n">Pointing</span>      	<span class="c1"># Col*=1.9&quot; NulE=-2.4&quot; el=26</span>
+<span class="mi">3330</span>	<span class="n">GLO_LON_43</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.20</span>    	<span class="n">OTF</span>     	<span class="c1"># </span>
+<span class="mi">3331</span>	<span class="n">GLO_LON_43</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.00</span>     <span class="n">OTF</span>     	<span class="c1">#</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 23/11/2020;</span>
+<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay 1 12</span>
+<span class="c1"># receiver loading:  ok</span>
+<span class="c1"># start 10.9.2020; start at 16:00; 23.11.2020, 20:30</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
+<span class="c1">###############################################################################</span>
+<span class="mi">3729</span>	<span class="n">NGC7027</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-0.4&quot; NulE=0.9&quot; el=78</span>
+<span class="mi">3730</span>	<span class="n">NGC7027</span>                 <span class="n">focus</span>     	<span class="c1"># z=-1.8mm</span>
+<span class="mi">3731</span>	<span class="n">NGC7027</span>   	        <span class="n">Pointing</span>  	<span class="c1"># Col*=0.1&quot; NulE=2.3&quot; el=78 </span>
+<span class="mi">3732</span>    <span class="n">NGC7027</span>                 <span class="n">L</span><span class="o">-</span><span class="n">pointing</span>      <span class="c1"># Col*=-0.4&quot; NulE=1.8&quot; el=78 </span>
+<span class="mi">3733</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>          	<span class="n">Pointing</span>     	<span class="c1"># Col*=-0.6&quot; NulE=-2.0&quot; el=25 </span>
+<span class="mi">3734</span>	<span class="n">GLO_LAT_22</span><span class="o">.</span><span class="mf">60_0.00</span>     	<span class="n">OTF</span>     	<span class="c1"># </span>
+<span class="mi">3735</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>     	        <span class="n">Pointing</span>      	<span class="c1"># Col*=0.2&quot; NulE=-3.6&quot; el=27</span>
+<span class="mi">3736</span>	<span class="n">GLO_LON_43</span><span class="o">.</span><span class="mf">00_0.20</span>    	<span class="n">OTF</span>     	<span class="c1">#</span>
+<span class="mi">3737</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>     	        <span class="n">Pointing</span>      	<span class="c1"># Col*=-2.6&quot; NulE=-7.7&quot; el=38</span>
+<span class="mi">3738</span>	<span class="n">GLO_LON_59</span><span class="o">.</span><span class="mf">00_0.60</span>      <span class="n">OTF</span>     	<span class="c1">#</span>
 </pre></div>
 
     </div>
