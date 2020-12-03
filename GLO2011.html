@@ -13270,6 +13270,54 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 22-22/11/2020</span>
+<span class="c1">#start 29.11.2020, 17:00 - end 29.11.2020, 20:30 CEST</span>
+<span class="c1">#firmware special: band1: 23, band2:-2</span>
+<span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
+<span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
+<span class="c1">#start 21.11.2020, 18:00 - end 21.11.2020, 20:30</span>
+<span class="c1">#NOTE: 1, vncviewer observer8:20; ps:  </span>
+       <span class="mi">2</span><span class="p">,</span> <span class="n">vncviewer</span> <span class="n">observer8</span><span class="p">:</span><span class="mi">30</span><span class="p">;</span> <span class="n">ps</span><span class="p">:</span>  
+       <span class="mi">3</span><span class="p">,</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">Y</span> <span class="n">obseff</span><span class="nd">@observer8</span> <span class="n">ps</span><span class="p">:</span>  
+<span class="c1">#######setup steps#################</span>
+<span class="c1">#1,startup: project code: 102-20; Directory: /home/obseff/ygong/</span>
+<span class="c1">#2,specpol: (see: https://gongyan2444.github.io/specpol-setup.html)</span>
+<span class="c1">#           a, attenuation value 0.5; load special firmware False; restart** False</span>
+<span class="c1">#  wait for the Message: ”attenuation SpecPol: Attenuation has been set to 0.5”</span>
+<span class="c1">#           b, attenuation value -1 ; load special firmware True; restart** False</span>
+<span class="c1">#  wait for the Message: ”attenuation SpecPol: load firmware has finished successfully&quot;</span>
+                         <span class="err">“</span><span class="n">delay</span> <span class="ow">is</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="n">delay</span> <span class="ow">is</span> <span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="err">”</span>
+<span class="c1">#           c, attenuation value -1 ; load special firmware False; restart** True</span>
+<span class="c1"># wait for the Message: “attenuation SpecPol: Programs have been restarted successfully&quot;</span>
+<span class="c1">#3,Secondary: receiver: s45mm; version: cband_spec_plus_zooms_plus_polarimeter_2phases; freq:6GHz; load </span>
+<span class="c1">#4, observationClients: FeBe: s45mm-SPECPOL; BE section: 05 (BB-02 7000m FEED-01 X), zoom in the spectroscopy and press t to select the freq 6.7GHz; range: 6600-6730 MHz; </span>
+<span class="c1">#5, pointing; focus; pointing; Lpointing;</span>
+<span class="c1">#6, mapping 3c286: Mapping; @Cal3c286</span>
+<span class="c1">#7, mapping target: PSwitch; @mapnew/glo_lat_59.00_0.20</span>
+<span class="c1">#######setup finish#################</span>
+<span class="c1">#########################</span>
+<span class="c1">###    4464 Temp:-2.4  degree; Winds= 0.4 m/s; col*=-9.0   NulE=-10.2  Z =0.8 ####</span>
+<span class="c1">#use project ID 102-20</span>
+<span class="c1">#      4465       NGC7027                      pointing      col*=-1.0   NulE= -4.4 </span>
+<span class="c1">#      4466       NGC7027                      focus         Z = 1.3   </span>
+<span class="c1">#      4467       NGC7027                      pointing      col*= -2.6 NulE= -1.4</span>
+<span class="c1">#      4468       NGC7027                      Lpointing      col*=-3.5  NulE= 0.2</span>
+<span class="c1">#      4469       1923+210                     pointing      col*=-3.3   NulE=1.3 </span>
+<span class="c1">#      4470       GLO_LON_43.00_0.40           Mapping</span>
+<span class="c1">#      4471       GLO_LON_59.00_0.80            Mapping    </span>
+<span class="c1">###end observation#####</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
