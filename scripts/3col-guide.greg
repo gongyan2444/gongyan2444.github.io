@@ -1,0 +1,181 @@
+!!the script is used to make a 3-color image which can be used as guide maps
+!!v1.0
+!!v1.1: divide the script into the main program and the input part 
+!!v1.2: insert the star formation signposts
+!!v1.3: add the sigma of the 20 cm radio continuum into the figure
+!!      add the round function from python
+
+
+def char*30 name
+def real cen_a cen_b map_sz sig step
+PYTHON def rd(x): return round(x)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!Input Parameters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+let name N10          !!image name
+let cen_a  13.191667    !!the central longitude 
+let cen_b  0.041666667     !!the central latitude 
+let map_sz 15.5        !!map size in unit of arcmin
+let sig 0.9       !!used to make 20 cm continuum contours
+let step 6
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!main program!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+clear
+set /def
+set font duplex
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!spitzer three color image!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+set char 0.4
+define image a1 'name'-m1.gdf write
+define image a2 'name'-i4.gdf write
+define image a3 'name'-i2.gdf write
+
+define real rgb['a1%dim[1]','a1%dim[2]',3]
+let rgb[,,1] a1
+let rgb[,,2] a2
+let rgb[,,3] a3
+clear
+se box 4 14 4 14
+plot rgb /scal lin 25 500 30 250 2 28
+delete /VARIABLE rgb a1 a2 a3
+image /close
+
+image 'name'-20cm-magpis.gdf
+lim cen_a+map_sz/2./60. cen_a-map_sz/2./60. cen_b-map_sz/2./60. cen_b+map_sz/2./60. abs
+level 3*'sig'/1000 to 100*'sig' by 'step*sig'/1000
+pen /col 0 /wei 4
+rgmap /abs
+pen /col 8 /wei 2
+rgmap /abs
+
+pen /col 0 /wei 2
+set char 0.7
+@boxfillt 0.18 'name'
+
+lim cen_a+map_sz/2./60. cen_a-map_sz/2./60. cen_b-map_sz/2./60. cen_b+map_sz/2./60.
+set char 0.6
+pen /col 8 /wei 2.5
+box
+pen /col 0 /wei 2
+box
+
+
+set char 0.6
+pen /col 0 /wei 4
+draw text 1.5 1.5 "\gs="'rd(sig*10)/10' 
+draw text 1.5 1.0 "step="'step'"\gs"
+pen /col 8 /wei 2
+draw text 1.5 1.5 "\gs="'rd(sig*10)/10'
+draw text 1.5 1.0 "step="'step'"\gs"
+
+
+
+set char 0.8
+pen /col 0 /wei 4
+!draw text 1.5 8.5 'name' 
+pen /col 8 /wei 2
+!draw text 1.5 8.5 'name'
+ 
+set char 0.6
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!draw signposts!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+column x 1 y 2 /file ../../hii.dat
+set mark 80 1 0.2
+for i 1 to nxy
+  if (x[i].ge.(cen_a-map_sz/2./60.).and.x[i].le.(cen_a+map_sz/2./60.).and.y[i].ge.(cen_b-map_sz/2./60.).and.y[i].le.(cen_b+map_sz/2./60.)) then
+  pen /col 8 /wei 4
+  !draw mark 'x[i]' 'y[i]' /user abs
+  pen /col 3 /wei 2
+  !draw makr 'x[i]' 'y[i]' /user abs
+ endif
+next
+
+column x 1 y 2 /file ../../ch3oh.dat
+set mark 4 1 0.4 45
+for i 1 to nxy
+  if (x[i].ge.(cen_a-map_sz/2./60.).and.x[i].le.(cen_a+map_sz/2./60.).and.y[i].ge.(cen_b-map_sz/2./60.).and.y[i].le.(cen_b+map_sz/2./60.)) then
+  pen /col 8 /wei 4
+  !draw mark 'x[i]' 'y[i]' /user abs
+  pen /col 3 /wei 2
+  !draw makr 'x[i]' 'y[i]' /user abs
+ endif
+next
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!three CO image!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set box 14 24 4 14
+ 
+define image b1 ../moment-clip/hdu0_'name'L2_m0.gdf write
+define image b2 ../moment-clip/hdu0_'name'L_m0.gdf write
+define image b3 ../moment-clip/hdu0_'name'U_m0.gdf write
+ 
+define real rgb2['b1%dim[1]','b1%dim[2]',3]
+let rgb2[,,1] b1
+let rgb2[,,2] b2
+let rgb2[,,3] b3
+!!clear
+lim cen_a+map_sz/2./60. cen_a-map_sz/2./60. cen_b-map_sz/2./60. cen_b+map_sz/2./60.
+plot rgb2 /scal lin 1.6 9 1 45 9 70 
+delete /VARIABLE rgb2 b1 b2 b3
+image /close
+pen /col 8 /wei 2.5
+box p n
+pen /col 0 /wei 2
+box p n
+ 
+!image 'name'-20cm-magpis.gdf
+image ../moment-clip/'name'tex-bub.gdf
+lim cen_a+map_sz/2./60. cen_a-map_sz/2./60. cen_b-map_sz/2./60. cen_b+map_sz/2./60. abs
+!level 3*'sig'/1000 to 100*'sig' by 'step*sig'/1000
+pen /col 1 /wei 3
+rgmap /abs
+ 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!draw signposts!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+column x 1 y 2 /file ../../hii.dat
+set mark 80 1 0.2
+for i 1 to nxy
+  if (x[i].ge.(cen_a-map_sz/2./60.).and.x[i].le.(cen_a+map_sz/2./60.).and.y[i].ge.(cen_b-map_sz/2./60.).and.y[i].le.(cen_b+map_sz/2./60.)) then
+  pen /col 8 /wei 4
+  !draw mark 'x[i]' 'y[i]' /user abs
+  pen /col 3 /wei 2
+  !draw makr 'x[i]' 'y[i]' /user abs
+ endif
+next
+ 
+column x 1 y 2 /file ../../ch3oh.dat
+set mark 4 1 0.4 45
+for i 1 to nxy
+  if (x[i].ge.(cen_a-map_sz/2./60.).and.x[i].le.(cen_a+map_sz/2./60.).and.y[i].ge.(cen_b-map_sz/2./60.).and.y[i].le.(cen_b+map_sz/2./60.)) then
+  pen /col 8 /wei 4
+  !draw mark 'x[i]' 'y[i]' /user abs
+  pen /col 3 /wei 2
+  !draw makr 'x[i]' 'y[i]' /user abs
+ endif
+next
+
+
+
+set box 5.5 22.5 4 14 
+pen /col 0 /wei 2
+set char 0.8
+label "l (degree)" /x
+label "b (degree)" /y
+
+set char 0.6
+
+sic delete 'name'-guide.eps
+hard 'name'-guide.eps
