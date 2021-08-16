@@ -14432,6 +14432,90 @@ a.anchor-link {
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 15-16/08/2021</span>
+<span class="c1">#start 15.08.2021, 20:10 - end 16.08.2021, 06:14 CEST</span>
+<span class="c1">#firmware special: band1: 11, band2: 22</span>
+<span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
+<span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
+<span class="c1">#start 15.08.2021, 20:10 - end 16.08.2021, 06:14</span>
+<span class="c1">#######setup steps#################</span>
+<span class="c1">#1,startup: project code: 102-20; Directory: /home/obseff/ygong/</span>
+<span class="c1">#2,specpol: 1, attenuation value 0.5; load special firmware False; restart** False</span>
+               <span class="o">==&gt;</span><span class="n">Attenuation</span> <span class="n">has</span> <span class="n">been</span> <span class="nb">set</span> <span class="n">to</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="c1">#           2, attenuation value -1 ; load special firmware True; restart** False</span>
+<span class="c1">#           3, ==&gt;wait for the load firmware successfully and delay, </span>
+<span class="c1">#           4, attenuation value -1 ; load special firmware False; restart** True</span>
+<span class="c1">#           5, ==&gt;wait for the mess: “Program has been restarted successfully”</span>
+<span class="c1">###Notes: setup details: https://gongyan2444.github.io/specpol-setup.html</span>
+<span class="c1">#3,Secondary: receiver: s45mm; version: cband_spec_plus_zooms_plus_polarimeter_2phases; freq:6GHz; load </span>
+<span class="c1">#4, pointing; focus; pointing; Lpointing;</span>
+<span class="c1">#5, observationClients: FeBe: s45mm-SPECPOL; BE section: 05 (BB-02 7000m FEED-01 X), zoom in the spectroscopy and press t to select the freq 6.7GHz; range: 6600-6730 MHz(avoid spikes); </span>
+<span class="c1">#6, mapping 3c286: Mapping: @Cal3c286; new version: @Cal3C286v2</span>
+<span class="c1">#7, mapping target: PSwitch; @mapnew/glo_lat_59.00_0.20</span>
+<span class="c1">#8, at the end W3OH pointing; @W3OH_PSw;</span>
+<span class="c1">#9, connect to 100m in using vac for mac:</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gongyan2444</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">vncsetup</span><span class="o">.</span><span class="n">html</span>
+<span class="c1">#10,</span>
+<span class="n">GC</span><span class="o">/</span><span class="p">(</span><span class="n">scripts</span><span class="p">:</span> <span class="nd">@GC</span><span class="o">/</span><span class="n">glo_lon_1</span><span class="o">.</span><span class="mf">00_0.55</span><span class="p">)</span>
+<span class="n">scripts</span><span class="p">:</span> <span class="nd">@mapnew</span><span class="o">/</span><span class="n">glo_lon_41</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.80</span><span class="p">)</span>
+<span class="n">Cygnus</span> <span class="n">repeat</span><span class="p">:</span> <span class="p">(</span><span class="n">scripts</span><span class="p">:</span> <span class="nd">@cygnus</span><span class="o">/</span><span class="n">glo_lon_81</span><span class="o">.</span><span class="mf">50_0.85</span><span class="p">)</span>
+<span class="c1">#11,</span>
+<span class="c1">#######setup finish#################</span>
+<span class="c1">#########################</span>
+<span class="c1">###    6791 Temp:22; Winds=0.0m/s; col*=-4.8 ;  NulE=23.5 ; Z = 1.0 ####</span>
+<span class="c1">####TEST SCAN####</span>
+<span class="c1">#      6792       3C286                      pointing      col*=-2.4   NulE=15.1  </span>
+<span class="c1">#      6793       3C286                      pointing      col*= -5.2  NulE=15 </span>
+<span class="c1">#      6794       3C286                      pointing      col*= -6.4  NulE=17</span>
+<span class="c1">#      6795       3C286                      focus         Z = -1.7  </span>
+<span class="c1">#      6796       3C286                      pointing      col*=-6.8  NulE=17.9  </span>
+<span class="c1">#      6797       3C286                      Lpointing     col*=-6.9   NulE=17.8  </span>
+<span class="c1">#      6798       3C286@Cal3C286v2           Mapping             </span>
+<span class="c1">#      6799       NRAO530                    pointing      col*=-12.3  NulE=6.0      </span>
+<span class="c1">#      6800       @GC/glo_lat_2.05_0.00         Mapping       </span>
+<span class="c1">#      6801       @GC/glo_lat_2.15_0.00         Mapping       </span>
+<span class="c1">#      6802       @GC/glo_lat_2.25_0.00         Mapping       </span>
+<span class="c1">#      6803       @GC/glo_lat_6.25_0.00         Mapping  #stop at scan 16 as the elevation is too low. (stop-&gt;start)    </span>
+<span class="c1">#      6804       NRAO530                       pointing      col*=-10.2   NulE= 9.7      </span>
+<span class="c1">#      6805       @GC/glo_lat_10.05_0.00         Mapping # at scan 17-20, elevation&lt;14, turns yellow;     </span>
+<span class="c1">#      6806       @GC/glo_lat_15.95_0.00         Mapping       </span>
+<span class="c1">#      6807       NGC7027                    pointing      col*=2.0       NulE=18.8   </span>
+<span class="c1">#      6808       NGC7027                    focus         Z = -2.8 </span>
+<span class="c1">#      6809       NGC7027                    pointing       col*=2.1      NulE=16.6  </span>
+<span class="c1">#      6810       NGC7027                    Lpointing      col*=3.3      NulE=17.0</span>
+<span class="c1">#      6811       1923+210                     pointing      col*=1.1      NulE=15.7   </span>
+<span class="c1">#      6812       @mapnew/glo_lon_57.00_0.80     Mapping  </span>
+<span class="c1">#      6813       @mapnew/glo_lon_57.00_1.00          Mapping</span>
+<span class="c1">#      6814       1923+210                     pointing      col*=-2.3      NulE=9.1 </span>
+<span class="c1">#      6815       @mapnew/glo_lon_57.00_-1.00  Mapping  #problem at subscan 8</span>
+<span class="c1">#1,FitsWriter problem and restart computer in focus cabin</span>
+<span class="c1">#2,then focus problem and redo pol/focus/pol.</span>
+<span class="c1">#3,then as an add on the engines switched off automatically.</span>
+<span class="c1">#take half hour to solve the above problem and go to glo_lon_57.00_-1.00.</span>
+<span class="c1">#      6819       NGC7027                    pointing      col*= -2.3       NulE=9.1 </span>
+<span class="c1">#      6820       NGC7027                    pointing      col*= -1.3       NulE=-11     </span>
+<span class="c1">#      6821       NGC7027                    focus         Z = -3.0 </span>
+<span class="c1">#      6822       NGC7027                    pointing       col*=-2.9      NulE=-9.7  </span>
+<span class="c1">#      6823       @mapnew/glo_lon_57.00_-1.00 Mapping  # stop it at subscan 14 as its elevation is too low &lt; 22degree. </span>
+<span class="c1">#      6824       2013+37                    pointing      col*=-1.1    NulE=-9.5        </span>
+<span class="c1">#      6825       @cygnus/glo_lon_81.50_1.95 Mapping       </span>
+<span class="c1">#      6826       W3OH                       pointing      col*=-4.6   NulE= -7.8</span>
+<span class="c1">#      6827       W3OH                       focus         Z = -3.2 </span>
+<span class="c1">#      6828       W3OH                       pointing      col*=-4.2  NulE=-7.5   </span>
+<span class="c1">#      6829       @W3OH_PSw                  ONOFF(PSwitch) </span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
