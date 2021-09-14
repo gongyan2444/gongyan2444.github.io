@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GLO2108</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>GLO2109</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14262,347 +14262,37 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 01-02/08/2021</span>
-<span class="c1">#firmware special: band1: -3, band2:21</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 13-14/09/2021</span>
+<span class="c1">#firmware special: band1: 24, band2:-3</span>
 <span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
 <span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
-<span class="c1">#start 01.08.2020, 21:00 - end 02.08.2020, 7:30</span>
-<span class="c1"># strong attenuation in SPECPOL bb2; spikes but data fine</span>
+<span class="c1">#start 13.09.2020, 17:00 - end 14.09.2020, 2:00</span>
 <span class="c1">#######setup steps#################</span>
-<span class="c1">#      5720       3C286                      Pointing      col*=-0.4 NulE=-8.5</span>
-<span class="c1">#      5721       3C286                      focus         z=-2.2mm</span>
-<span class="c1">#      5722       3C286                      Pointing      col*=-2.9 NulE=-6.4</span>
-<span class="c1">#      5723       3C286                      L-pointing    col*=-3.5 NulE=-7.6</span>
-<span class="c1">#      5724       2013+37                    Pointing      col*=-0.6 NulE=-0.8</span>
-<span class="c1">#      5725       GLO_LON_78.50_-0.85        OTF</span>
-<span class="c1">#      5726       NRAO530                    Pointing      col*=-6.1 NulE=-6.7</span>
-<span class="c1">#      5727       GLO_LON_-0.95_-0.55        OTF</span>
-<span class="c1">#      5728       NRAO530                    Pointing      col*=-10.5 NulE=-10.6</span>
-<span class="c1">#      5729       GLO_LAT_19.00_0.00         OTF</span>
-<span class="c1">#      5730       GLO_LAT_20.20_0.00         OTF</span>
-<span class="c1">#      5731       1741-038                   Pointing      col*=-3.0 NulE=-12.9</span>
-<span class="c1">#      5732       GLO_LAT_32.40_0.00         OTF</span>
-<span class="c1">#      5733       GLO_LON_37.00_-1.00        OTF</span>
-<span class="c1">#      5734       1923+210                   Pointing      col*=-3.0 NulE=-9.3</span>
-<span class="c1">#      5735       GLO_LON_57.00_0.40         OTF</span>
-<span class="c1">#      5736       GLO_LON_57.00_0.60         OTF</span>
-<span class="c1">#      5737       NGC7027                    Pointing      col*=-0.9 NulE=-10.5</span>
-<span class="c1">#      5738       NGC7027                    focus         z=-2.0</span>
-<span class="c1">#      5739       NGC7027                    Pointing      col*=-0.6 NulE=-9.2</span>
-<span class="c1">#      5740       NGC7027                    L-Pointing    col*=-2.9 NulE=-9.4</span>
-<span class="c1">#      5741       GLO_LON_78.50_-0.45        OTF</span>
-<span class="c1">#      5742       W3OH                       Pointing      col*=-2.4 NulE=-2.1</span>
-<span class="c1">#      5743       W3OH                       Onoff         Shape OK</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 05/08/2021; Rugel</span>
-<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay 21,18</span>
-<span class="c1"># receiver loading: ok</span>
-<span class="c1"># note: strong RFI: relatively new spike at 6600 MHz (~months). There is a strong spike at 7000 MHz, and some other harmonics, which are only seen in the specpol.</span>
-<span class="c1"># start 5.08.2021; start at 22:30; beginning technical problems; effective start at 23:00; end 6.8.2021; 7:30</span>
-<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
-<span class="c1"># strong attenuation in SPECPOL bb2; spikes but data fine</span>
-<span class="c1">##########################</span>
-<span class="c1"># RECEIVER SPECPOL GLOSTAR</span>
-<span class="mi">5947</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Pointing</span>	<span class="c1"># aborted</span>
-<span class="mi">5948</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=2.0&quot; NulE=-18.2&quot; el=32deg</span>
-<span class="mi">5949</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Focus</span>		<span class="c1"># zlin=-2.3mm</span>
-<span class="mi">5950</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=2.1&quot; NulE=-19.9&quot; el=32deg</span>
-<span class="mi">5951</span>	<span class="n">NRAO530</span>      		<span class="n">Pointing</span>	<span class="c1"># Col*=-9.5&quot; NulE=-22.0&quot; el=25deg</span>
-<span class="mi">5952</span>	<span class="n">OFF_4</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">4.0</span>           	<span class="n">ONOFF</span>		<span class="c1"># ref: 4.0,-8.0 el=10deg # H2CO -0.2 K contamination@25km/s</span>
-<span class="mi">5953</span>	<span class="n">OFF_4</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">3.0</span>           	<span class="n">ONOFF</span>		<span class="c1"># ref: 4.0,-6.0 el=11deg # close to mountain </span>
-<span class="mi">5954</span>	<span class="n">OFF_8</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">4.0</span>           	<span class="n">ONOFF</span>		<span class="c1"># ref: 8.0,-8.0 el=13deg # clear</span>
-<span class="mi">5955</span>	<span class="n">OFF_12</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">4.0</span>           <span class="n">ONOFF</span>		<span class="c1"># ref: 12.0,-8.0 el=16deg</span>
-<span class="mi">5956</span>	<span class="n">OFF_16</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">4.0</span>           <span class="n">ONOFF</span>		<span class="c1"># ref: 16.0,-8.0 el=19deg</span>
-<span class="mi">5957</span>	<span class="n">NGC7027</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-1.5&quot; NulE=-16.1&quot; el=78deg</span>
-<span class="mi">5958</span>	<span class="n">NGC7027</span>            	<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-0.8&quot; NulE=-16.4&quot; el=78deg</span>
-<span class="mi">5959</span>	<span class="n">NRAO530</span>      		<span class="n">Pointing</span>	<span class="c1"># Col*=-4.3&quot; NulE=-22.1&quot; el=16deg</span>
-<span class="mi">5960</span>	<span class="n">GLO_LON_21</span><span class="o">.</span><span class="mf">00_1.00</span>      <span class="n">OTF</span>		<span class="c1"># el=15-24deg </span>
-<span class="mi">5961</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-2.8&quot; NulE=-21.7&quot; el=27deg</span>
-<span class="mi">5962</span>	<span class="n">GLO_LON_37</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.80</span>     <span class="n">OTF</span>		<span class="c1"># el=21-33deg </span>
-<span class="mi">5963</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-5.4&quot; NulE=-26.5&quot; el=39deg</span>
-<span class="mi">5964</span>	<span class="n">GLO_LON_57</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.40</span>     <span class="n">OTF</span>		<span class="c1"># el=29-41deg </span>
-<span class="mi">5965</span>	<span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>      		<span class="n">Pointing</span>	<span class="c1"># Col*=-2.3&quot; NulE=-25.1&quot; el=45deg</span>
-<span class="mi">5966</span>	<span class="n">GLO_LON_78</span><span class="o">.</span><span class="mi">50</span><span class="n">_</span><span class="o">-</span><span class="mf">0.35</span>     <span class="n">OTF</span>		<span class="c1"># el=40-49deg</span>
-<span class="mi">5967</span>	<span class="n">GLO_LON_78</span><span class="o">.</span><span class="mf">50_1.55</span>     	<span class="n">OTF</span>		<span class="c1"># el=33-41deg</span>
-<span class="mi">5968</span>	<span class="n">GLO_LON_78</span><span class="o">.</span><span class="mf">50_1.95</span>     	<span class="n">OTF</span>		<span class="c1"># el=27-35deg</span>
-<span class="mi">5969</span>	<span class="n">GLO_LON_81</span><span class="o">.</span><span class="mf">50_1.85</span>     	<span class="n">OTF</span>		<span class="c1"># ABORTED el=26-32deg </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 6/08/2021; Rugel</span>
-<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay 21,22</span>
-<span class="c1"># receiver loading: ok</span>
-<span class="c1"># note: strong RFI</span>
-<span class="c1"># start 6.08.2021; 19:00 - end 7.8.21, 6:15</span>
-<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
-<span class="c1"># strong attenuation in SPECPOL bb2; spikes but data fine</span>
-<span class="c1">##########################</span>
-<span class="c1"># RECEIVER SPECPOL GLOSTAR</span>
-<span class="mi">5996</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-6.6&quot; NulE=-20.5&quot; el=66deg</span>
-<span class="mi">5997</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Focus</span>		<span class="c1"># zlin=-1.1mm</span>
-<span class="mi">5998</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-3.5&quot; NulE=-25.5&quot; el=65deg</span>
-<span class="mi">5999</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=-5.0&quot; NulE=-20.8&quot; el=65deg</span>
-<span class="mi">6000</span>	<span class="mi">3</span><span class="n">C286</span>            	<span class="n">Calmap</span>		<span class="c1"># Cal3C286v2: 90&quot;/sec; 30&quot; spacing</span>
-<span class="mi">6001</span>	<span class="n">NGC7027</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=5.5&quot; NulE=-19.6&quot; el=31deg</span>
-<span class="mi">6002</span>	<span class="n">NGC7027</span>            	<span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>	<span class="c1"># Col*=5.2&quot; NulE=-21.1&quot; el=31deg</span>
-<span class="mi">6003</span>	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=1.8&quot; NulE=-17.9&quot; el=28deg</span>
-<span class="mi">6005</span>	<span class="n">W3OH</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-2.1&quot; NulE=-16.6&quot; el=23deg</span>
-<span class="mi">6006</span>	<span class="n">W3OH</span>            	<span class="n">ONOFF</span>		<span class="c1"># el=23deg</span>
-<span class="mi">6007</span>	<span class="n">NRAO530</span>      		<span class="n">Pointing</span>	<span class="c1"># Col*=-6.6&quot; NulE=-27.4&quot; el=23deg</span>
-<span class="mi">6008</span>	<span class="n">GLO_LON_21</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">1.00</span>     <span class="n">OTF</span>		<span class="c1"># el=18-26deg </span>
-<span class="mi">6009</span>	<span class="n">OFF_4</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">3.0</span>      	<span class="n">ONOFF</span>		<span class="c1"># REF: 4.0d, -3.0d, el=10; clear</span>
-<span class="mi">6010</span>	<span class="n">OFF_16</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">3.0</span>      	<span class="n">ONOFF</span>		<span class="c1"># REF: 16.0d, -8.0d, el=20; clear</span>
-<span class="mi">6011</span>	<span class="n">GLO_LAT_6</span><span class="o">.</span><span class="mf">05_0.00</span>    	<span class="n">OTF</span>		<span class="c1"># el=15-16deg</span>
-<span class="mi">6012</span>	<span class="n">OFF_12</span><span class="o">.</span><span class="mf">0_4.0</span>      	<span class="n">ONOFF</span>		<span class="c1"># REF: 12.0d, 8.0d, el=23; clear</span>
-<span class="mi">6013</span>	<span class="n">NRAO530</span>      		<span class="n">Pointing</span>	<span class="c1"># Col*=-8.7&quot; NulE=-27.6&quot; el=24deg</span>
-<span class="mi">6014</span>	<span class="n">GLO_LAT_6</span><span class="o">.</span><span class="mf">15_0.00</span>     	<span class="n">OTF</span>		<span class="c1"># el=13-15deg</span>
-<span class="mi">6015</span>	<span class="n">GLO_LAT_9</span><span class="o">.</span><span class="mf">95_0.00</span>     	<span class="n">OTF</span>		<span class="c1"># ABORTED (reference too low)</span>
-<span class="mi">6016</span>	<span class="n">GLO_LAT_19</span><span class="o">.</span><span class="mf">20_0.00</span>     	<span class="n">OTF</span>		<span class="c1"># el=20-26deg</span>
-<span class="mi">6018</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-5.8&quot; NulE=-28.9&quot; el=34deg</span>
-<span class="mi">6019</span>	<span class="n">GLO_LON_37</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.60</span>     <span class="n">OTF</span>		<span class="c1"># el=28-38deg</span>
-<span class="mi">6020</span>	<span class="n">GLO_LON_37</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.40</span>     <span class="n">OTF</span>		<span class="c1"># el=17-29deg</span>
-<span class="mi">6021</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>            	<span class="n">Pointing</span>	<span class="c1"># Col*=-5.9&quot; NulE=-31.1&quot; el=deg</span>
-<span class="mi">6022</span>	<span class="n">OFF_54</span><span class="o">.</span><span class="mi">0</span><span class="n">_</span><span class="o">-</span><span class="mf">4.0</span>     	<span class="n">ONOFF</span>		<span class="c1"># REF: 54.0, -8.0; clear</span>
-<span class="mi">6023</span>	<span class="n">GLO_LON_57</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.80</span>     <span class="n">OTF</span>		<span class="c1"># el=22-35deg</span>
-<span class="mi">6024</span>	<span class="n">GLO_LON_81</span><span class="o">.</span><span class="mf">50_1.85</span>     	<span class="n">OTF</span>		<span class="c1"># el=37-45deg</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  Observations by Rohit</span>
-<span class="c1">#  From  09.08.2021 23:00  to  10.08.2021 06:00</span>
-<span class="c1">#  firmware specpol: using automatic setup in OBSINP (attenuation 0.5); delay 11 and 22</span>
-<span class="c1">#  wind ~ 3 m/s</span>
-<span class="c1">#  6267-6270 scans had bad fit quality, operator tried to fix as I was asleep, but it was still there.</span>
-<span class="c1">#  So I aborted the scan, moved the lines in spectroscopy tab and did a new pointing, and then the fit was good again.</span>
-<span class="c1">#  Last two scans (6274,6275) may have been aborted by the operator due to time running out</span>
-<span class="c1"># strong attenuation in SPECPOL bb2; spikes but data fine</span>
-<span class="c1">##########################</span>
-<span class="mi">6256</span>    <span class="mi">3</span><span class="n">C286</span>               <span class="n">Pointing</span>    <span class="c1"># el=28     Col*=-0.7&quot;      NulE=-10.1&quot;</span>
-<span class="mi">6257</span>    <span class="mi">3</span><span class="n">C286</span>               <span class="n">Focus</span>       <span class="c1">#                                       zlin=-3.0</span>
-<span class="mi">6258</span>    <span class="mi">3</span><span class="n">C286</span>               <span class="n">Pointing</span>    <span class="c1"># el=28     Col*=-1.2&quot;      NulE=-12.0&quot;</span>
-<span class="mi">6259</span>    <span class="mi">3</span><span class="n">C286</span>               <span class="n">Calmap</span>      <span class="c1"># el=27</span>
-<span class="mi">6260</span>    <span class="n">NRAO530</span>             <span class="n">Pointing</span>    <span class="c1"># el=22     Col*=-10.5&quot;     NulE=-10.1&quot;</span>
-<span class="mi">6261</span>    <span class="n">GLO_LAT_11</span><span class="o">.</span><span class="mf">95_0.00</span>  <span class="n">OTF</span>         <span class="c1"># el=19-18</span>
-<span class="mi">6262</span>    <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">05_0.00</span>  <span class="n">OTF</span>         <span class="c1"># el=19-17</span>
-<span class="mi">6263</span>    <span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>            <span class="n">Pointing</span>    <span class="c1"># el=36     Col*=-6.9&quot;      NulE=-9.3&quot;</span>
-<span class="mi">6264</span>    <span class="n">GLO_LON_37</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.20</span> <span class="n">OTF</span>         <span class="c1"># el=38-32</span>
-<span class="mi">6265</span>    <span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>            <span class="n">Pointing</span>    <span class="c1"># el=48     Col*=-4.2&quot;      NulE=-10.6&quot;</span>
-<span class="mi">6266</span>    <span class="n">GLO_LAT_52</span><span class="o">.</span><span class="mf">20_0.00</span>  <span class="n">OTF</span>         <span class="c1"># el=34-46</span>
-<span class="mi">6267</span>    <span class="n">K3</span><span class="o">-</span><span class="mi">50</span><span class="n">A</span>              <span class="n">Pointing</span>    <span class="c1"># el=50     Col*=-4.2&quot;      NulE=-10.6&quot;</span>
-<span class="mi">6268</span>    <span class="n">K3</span><span class="o">-</span><span class="mi">50</span><span class="n">A</span>              <span class="n">Pointing</span>    <span class="c1"># el=49     Col*=-24.9&quot;     NulE=20.1&quot;</span>
-<span class="mi">6269</span>    <span class="n">K3</span><span class="o">-</span><span class="mi">50</span><span class="n">A</span>              <span class="n">Pointing</span>    <span class="c1"># el=49     Col*=-19.8&quot;     NulE=14.9&quot;</span>
-<span class="mi">6270</span>    <span class="n">GLO_LON_81</span><span class="o">.</span><span class="mf">50_1.95</span>  <span class="n">OTF</span>         <span class="c1"># el=34-46  aborted due to bad fit quality</span>
-<span class="mi">6271</span>    <span class="mi">2013</span><span class="o">+</span><span class="mi">37</span>             <span class="n">Pointing</span>    <span class="c1"># el=48     Col*=-1.1&quot;      NulE=-7.1&quot;</span>
-<span class="mi">6272</span>    <span class="n">GLO_LAT_78</span><span class="o">.</span><span class="mf">50_0.50</span>  <span class="n">OTF</span>         <span class="c1"># el=50</span>
-<span class="mi">6273</span>    <span class="n">GLO_LAT_80</span><span class="o">.</span><span class="mf">80_0.50</span>  <span class="n">OTF</span>         <span class="c1"># el=45</span>
-<span class="mi">6274</span>    <span class="n">NGC7027</span>             <span class="n">Pointing</span>    <span class="c1"># el=     Col*=&quot;      NulE=&quot;</span>
-<span class="mi">6275</span>    <span class="n">NGC7027</span>             <span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>  <span class="c1"># el=     Col*=&quot;      NulE=&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 15-16/08/2021</span>
-<span class="c1">#start 15.08.2021, 20:10 - end 16.08.2021, 06:14 CEST</span>
-<span class="c1">#firmware special: band1: 11, band2: 22</span>
-<span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
-<span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
-<span class="c1">#start 15.08.2021, 20:10 - end 16.08.2021, 06:14</span>
-<span class="c1">#######setup steps#################</span>
-<span class="c1">#1,startup: project code: 102-20; Directory: /home/obseff/ygong/</span>
-<span class="c1">#2,specpol: 1, attenuation value 0.5; load special firmware False; restart** False</span>
-               <span class="o">==&gt;</span><span class="n">Attenuation</span> <span class="n">has</span> <span class="n">been</span> <span class="nb">set</span> <span class="n">to</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="c1">#           2, attenuation value -1 ; load special firmware True; restart** False</span>
-<span class="c1">#           3, ==&gt;wait for the load firmware successfully and delay, </span>
-<span class="c1">#           4, attenuation value -1 ; load special firmware False; restart** True</span>
-<span class="c1">#           5, ==&gt;wait for the mess: “Program has been restarted successfully”</span>
-<span class="c1">###Notes: setup details: https://gongyan2444.github.io/specpol-setup.html</span>
-<span class="c1">#3,Secondary: receiver: s45mm; version: cband_spec_plus_zooms_plus_polarimeter_2phases; freq:6GHz; load </span>
-<span class="c1">#4, pointing; focus; pointing; Lpointing;</span>
-<span class="c1">#5, observationClients: FeBe: s45mm-SPECPOL; BE section: 05 (BB-02 7000m FEED-01 X), zoom in the spectroscopy and press t to select the freq 6.7GHz; range: 6600-6730 MHz(avoid spikes); </span>
-<span class="c1">#6, mapping 3c286: Mapping: @Cal3c286; new version: @Cal3C286v2</span>
-<span class="c1">#7, mapping target: PSwitch; @mapnew/glo_lat_59.00_0.20</span>
-<span class="c1">#8, at the end W3OH pointing; @W3OH_PSw;</span>
-<span class="c1">#9, connect to 100m in using vac for mac:</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gongyan2444</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">vncsetup</span><span class="o">.</span><span class="n">html</span>
-<span class="c1">#10,</span>
-<span class="n">GC</span><span class="o">/</span><span class="p">(</span><span class="n">scripts</span><span class="p">:</span> <span class="nd">@GC</span><span class="o">/</span><span class="n">glo_lon_1</span><span class="o">.</span><span class="mf">00_0.55</span><span class="p">)</span>
-<span class="n">scripts</span><span class="p">:</span> <span class="nd">@mapnew</span><span class="o">/</span><span class="n">glo_lon_41</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.80</span><span class="p">)</span>
-<span class="n">Cygnus</span> <span class="n">repeat</span><span class="p">:</span> <span class="p">(</span><span class="n">scripts</span><span class="p">:</span> <span class="nd">@cygnus</span><span class="o">/</span><span class="n">glo_lon_81</span><span class="o">.</span><span class="mf">50_0.85</span><span class="p">)</span>
-<span class="c1">#11,</span>
-<span class="c1">#######setup finish#################</span>
-<span class="c1">#########################</span>
-<span class="c1">###    6791 Temp:22; Winds=0.0m/s; col*=-4.8 ;  NulE=23.5 ; Z = 1.0 ####</span>
-<span class="c1">####TEST SCAN####</span>
-<span class="c1">#      6792       3C286                      pointing      col*=-2.4   NulE=15.1  </span>
-<span class="c1">#      6793       3C286                      pointing      col*= -5.2  NulE=15 </span>
-<span class="c1">#      6794       3C286                      pointing      col*= -6.4  NulE=17</span>
-<span class="c1">#      6795       3C286                      focus         Z = -1.7  </span>
-<span class="c1">#      6796       3C286                      pointing      col*=-6.8  NulE=17.9  </span>
-<span class="c1">#      6797       3C286                      Lpointing     col*=-6.9   NulE=17.8  </span>
-<span class="c1">#      6798       3C286@Cal3C286v2           Mapping             </span>
-<span class="c1">#      6799       NRAO530                    pointing      col*=-12.3  NulE=6.0      </span>
-<span class="c1">#      6800       @GC/glo_lat_2.05_0.00         Mapping       </span>
-<span class="c1">#      6801       @GC/glo_lat_2.15_0.00         Mapping       </span>
-<span class="c1">#      6802       @GC/glo_lat_2.25_0.00         Mapping       </span>
-<span class="c1">#      6803       @GC/glo_lat_6.25_0.00         Mapping  #stop at scan 16 as the elevation is too low. (stop-&gt;start)    </span>
-<span class="c1">#      6804       NRAO530                       pointing      col*=-10.2   NulE= 9.7      </span>
-<span class="c1">#      6805       @GC/glo_lat_10.05_0.00         Mapping # at scan 17-20, elevation&lt;14, turns yellow;     </span>
-<span class="c1">#      6806       @GC/glo_lat_15.95_0.00         Mapping       </span>
-<span class="c1">#      6807       NGC7027                    pointing      col*=2.0       NulE=18.8   </span>
-<span class="c1">#      6808       NGC7027                    focus         Z = -2.8 </span>
-<span class="c1">#      6809       NGC7027                    pointing       col*=2.1      NulE=16.6  </span>
-<span class="c1">#      6810       NGC7027                    Lpointing      col*=3.3      NulE=17.0</span>
-<span class="c1">#      6811       1923+210                     pointing      col*=1.1      NulE=15.7   </span>
-<span class="c1">#      6812       @mapnew/glo_lon_57.00_0.80     Mapping  </span>
-<span class="c1">#      6813       @mapnew/glo_lon_57.00_1.00          Mapping</span>
-<span class="c1">#      6814       1923+210                     pointing      col*=-2.3      NulE=9.1 </span>
-<span class="c1">#      6815       @mapnew/glo_lon_57.00_-1.00  Mapping  #problem at subscan 8</span>
-<span class="c1">#1,FitsWriter problem and restart computer in focus cabin</span>
-<span class="c1">#2,then focus problem and redo pol/focus/pol.</span>
-<span class="c1">#3,then as an add on the engines switched off automatically.</span>
-<span class="c1">#take half hour to solve the above problem and go to glo_lon_57.00_-1.00.</span>
-<span class="c1">#      6819       NGC7027                    pointing      col*= -2.3       NulE=9.1 </span>
-<span class="c1">#      6820       NGC7027                    pointing      col*= -1.3       NulE=-11     </span>
-<span class="c1">#      6821       NGC7027                    focus         Z = -3.0 </span>
-<span class="c1">#      6822       NGC7027                    pointing       col*=-2.9      NulE=-9.7  </span>
-<span class="c1">#      6823       @mapnew/glo_lon_57.00_-1.00 Mapping  # stop it at subscan 14 as its elevation is too low &lt; 22degree. </span>
-<span class="c1">#      6824       2013+37                    pointing      col*=-1.1    NulE=-9.5        </span>
-<span class="c1">#      6825       @cygnus/glo_lon_81.50_1.95 Mapping       </span>
-<span class="c1">#      6826       W3OH                       pointing      col*=-4.6   NulE= -7.8</span>
-<span class="c1">#      6827       W3OH                       focus         Z = -3.2 </span>
-<span class="c1">#      6828       W3OH                       pointing      col*=-4.2  NulE=-7.5   </span>
-<span class="c1">#      6829       @W3OH_PSw                  ONOFF(PSwitch) </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 30-31/08/2021</span>
-<span class="c1">#firmware special: band1: 19, band2:-3</span>
-<span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
-<span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
-<span class="c1">#start 30.08.2020, 17:00 - end 31.08.2020, 3:00</span>
-<span class="c1">#######setup steps#################</span>
-      <span class="mi">8195</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=</span><span class="mf">2.0</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">13.0</span> 
-      <span class="mi">8196</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">focus</span>         <span class="n">z</span><span class="o">=-</span><span class="mf">1.3</span><span class="n">mm</span>
-      <span class="mi">8197</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=</span><span class="mf">4.1</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">13.6</span>
-      <span class="mi">8198</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">L</span><span class="o">-</span><span class="n">pointing</span>    <span class="n">col</span><span class="o">*=</span><span class="mf">3.7</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">13.6</span>
-      <span class="mi">8199</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">CalMap</span>
-      <span class="mi">8200</span>       <span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>                   <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">2.6</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">0.2</span>
-      <span class="mi">8201</span>       <span class="n">GLO_LON_37</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.00</span>        <span class="n">OTF</span>
-      <span class="mi">8202</span>       <span class="n">NRAO530</span>                    <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">3.6</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">6.2</span>
-      <span class="mi">8203</span>       <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">25_0.00</span>         <span class="n">OTF</span>
-      <span class="mi">8204</span>       <span class="n">GLO_LAT_2</span><span class="o">.</span><span class="mf">35_0.00</span>          <span class="n">OTF</span>        
-      <span class="mi">8205</span>       <span class="n">GLO_LAT_2</span><span class="o">.</span><span class="mf">45_0.00</span>          <span class="n">OTF</span>
-      <span class="mi">8206</span>       <span class="n">GLO_LAT_2</span><span class="o">.</span><span class="mf">55_0.00</span>          <span class="n">OTF</span>
-      <span class="mi">8207</span>       <span class="n">NGC7027</span>                    <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">1.0</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">6.6</span>          
-      <span class="mi">8208</span>       <span class="n">NGC7027</span>                    <span class="n">focus</span>         <span class="n">z</span><span class="o">=-</span><span class="mf">2.3</span><span class="n">mm</span>
-      <span class="mi">8209</span>       <span class="n">NGC7027</span>                    <span class="n">pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">2.8</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">4.4</span>
-      <span class="mi">8210</span>       <span class="n">NGC7027</span>                    <span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>    <span class="n">col</span><span class="o">*=-</span><span class="mf">2.2</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">4.4</span>      
-      <span class="mi">8211</span>       <span class="n">NRAO530</span>                    <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">5.1</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">1.8</span>    
-      <span class="mi">8212</span>       <span class="n">GLO_LAT_10</span><span class="o">.</span><span class="mf">15_0.00</span>         <span class="n">OTF</span>
-      <span class="mi">8213</span>       <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">35_0.00</span>         <span class="n">OTF</span> 
-      <span class="mi">8214</span>       <span class="n">GLO_LON_21</span><span class="o">.</span><span class="mf">00_0.80</span>         <span class="n">OTF</span>
-      <span class="mi">8215</span>       <span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>                   <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=</span><span class="mf">2.1</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">5.9</span>
-      <span class="mi">8216</span>       <span class="n">GLO_LON_37</span><span class="o">.</span><span class="mf">00_0.20</span>         <span class="n">OTF</span>
-      <span class="mi">8217</span>       <span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>                   <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">0.1</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">5.1</span>
-      <span class="mi">8218</span>       <span class="n">GLO_LON_57</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">1.00</span>        <span class="n">OTF</span> 
-      <span class="mi">8219</span>       <span class="n">W3OH</span>                       <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">4.2</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">1.7</span>
-      <span class="mi">8220</span>       <span class="n">W3Oh</span>                       <span class="n">Onoff</span>         <span class="n">Shape</span> <span class="n">OK</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Observation 30-31/08/2021</span>
-<span class="c1">#firmware special: band1: 19, band2:-3</span>
-<span class="c1">#receiver loading; s45mm; ***2phase; ok</span>
-<span class="c1">#check on scan: specpol chan dispersion correction - ok for both bands</span>
-<span class="c1">#start 31.08.2020, 17:00 - end 01.09.2020, 3:00</span>
-<span class="c1">#######setup steps#################</span>
-	<span class="mi">8276</span> 	<span class="mi">3</span><span class="n">C286</span> 			<span class="n">Pointing</span>	<span class="n">col</span><span class="o">*=</span><span class="mf">3.4</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">7.3</span>
-	<span class="mi">8277</span>    <span class="mi">3</span><span class="n">C286</span> 			<span class="n">Focus</span>    	<span class="n">z</span><span class="o">=-</span><span class="mf">0.7</span><span class="n">mm</span>
-	<span class="mi">8278</span>    <span class="mi">3</span><span class="n">C286</span> 			<span class="n">Pointing</span> 	<span class="n">col</span><span class="o">*=</span><span class="mf">6.4</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">6.2</span>
-	<span class="mi">8279</span>    <span class="mi">3</span><span class="n">C286</span> 			<span class="n">L</span><span class="o">-</span><span class="n">pointing</span> 	<span class="n">col</span><span class="o">*=</span><span class="mf">5.8</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">3.9</span>
-	<span class="mi">8280</span>    <span class="mi">3</span><span class="n">C286</span> 			<span class="n">CalMap</span>
-	<span class="mi">8281</span> 	<span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>		<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=</span><span class="mf">1.0</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">3.8</span>
-	<span class="mi">8282</span>	<span class="n">GLO_LON_37</span><span class="o">.</span><span class="mf">00_0.40</span>	<span class="n">OTF</span>	
-	<span class="mi">8283</span>	<span class="n">NRO530</span>			<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">5.0</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">0.1</span>
-	<span class="mi">8284</span>	<span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">45_0.00</span>	<span class="n">OTF</span>
-	<span class="mi">8285</span> 	<span class="n">M17</span>			<span class="n">OnOff</span>		
-	<span class="mi">8286</span>	<span class="n">GLO_LAT_2</span><span class="o">.</span><span class="mf">65_0.00</span>	<span class="n">OTF</span>
-	<span class="mi">8287</span>	<span class="n">GLO_LAT_2</span><span class="o">.</span><span class="mf">75_0.00</span>	<span class="n">OTF</span>
-	<span class="mi">8288</span>	<span class="n">NGC7027</span>		<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">1.5</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">9.6</span>
-	<span class="mi">8289</span>	<span class="n">NGC7027</span>		<span class="n">Focus</span>		<span class="n">z</span><span class="o">=-</span><span class="mf">2.6</span>
-	<span class="mi">8290</span>	<span class="n">NGC7027</span>		<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">1.7</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">8.6</span>
-	<span class="mi">8291</span>	<span class="n">NGC7027</span>		<span class="n">L</span><span class="o">-</span><span class="n">pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">3.4</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">8.2</span>
-	<span class="mi">8292</span>	<span class="n">NRAO530</span>		<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">6.1</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">5.7</span>
-	<span class="mi">8293</span>	<span class="n">GLO_LAT_10</span><span class="o">.</span><span class="mf">25_0.00</span>	<span class="n">OTF</span>
-	<span class="mi">8294</span>	<span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">55_0.00</span>	<span class="n">OTF</span>
-	<span class="mi">8295</span>  	<span class="n">GLO_LON_21</span><span class="o">.</span><span class="mf">00_0.60</span>	<span class="n">OTF</span>
-	<span class="mi">8296</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>		<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">1.1</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">5.9</span>
-	<span class="mi">8297</span>	<span class="n">GLO_LON_37</span><span class="o">.</span><span class="mf">00_0.60</span>	<span class="n">OTF</span>
-	<span class="mi">8298</span>	<span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>		<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">0.5</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">5.8</span>
-	<span class="mi">8299</span>	<span class="n">GLO_LAT_52</span><span class="o">.</span><span class="mf">40_0.00</span>	<span class="n">OTF</span>
-	<span class="mi">8300</span>	<span class="n">W3OH</span>			<span class="n">Pointing</span>	<span class="n">cal</span><span class="o">*=-</span><span class="mf">3.0</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">0.6</span>
-	<span class="mi">8301</span>	<span class="n">W3OH</span>			<span class="n">OnOff</span>		<span class="n">Shape</span> <span class="n">ok</span>	
+      <span class="mi">9458</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=</span><span class="mf">5.0</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">21.3</span> 
+      <span class="mi">9459</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">focus</span>         <span class="n">z</span><span class="o">=-</span><span class="mf">1.4</span><span class="n">mm</span>
+      <span class="mi">9460</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=</span><span class="mf">3.8</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">21.0</span>
+      <span class="mi">9461</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">L</span><span class="o">-</span><span class="n">pointing</span>    <span class="n">col</span><span class="o">*=</span><span class="mf">2.4</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">20.1</span>
+      <span class="mi">9462</span>       <span class="mi">3</span><span class="n">C286</span>                      <span class="n">CalMap</span>
+      <span class="mi">9463</span>       <span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>                   <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">2.5</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">7.0</span>
+      <span class="mi">9464</span>       <span class="n">GLO_LON_37</span><span class="o">.</span><span class="mf">00_0.80</span>         <span class="n">OTF</span>
+      <span class="mi">9465</span>       <span class="n">NRAO530</span>                    <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">5.8</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">4.1</span>
+      <span class="mi">9466</span>       <span class="n">GLO_LAT_2</span><span class="o">.</span><span class="mf">85_0.00</span>          <span class="n">OTF</span>
+      <span class="mi">9467</span>       <span class="n">GLO_LAT_2</span><span class="o">.</span><span class="mf">95_0.00</span>          <span class="n">OTF</span>        
+      <span class="mi">9468</span>       <span class="n">GLO_LAT_3</span><span class="o">.</span><span class="mf">05_0.00</span>          <span class="n">OTF</span>
+      <span class="mi">9469</span>       <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">65_0.00</span>         <span class="n">OTF</span>
+      <span class="mi">9470</span>       <span class="n">NGC7027</span>                    <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">0.5</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">0.4</span>          
+      <span class="mi">9471</span>       <span class="n">NGC7027</span>                    <span class="n">focus</span>         <span class="n">z</span><span class="o">=-</span><span class="mf">3.4</span><span class="n">mm</span>
+      <span class="mi">9472</span>       <span class="n">NGC7027</span>                    <span class="n">pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">1.8</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">1.1</span>
+      <span class="mi">9473</span>       <span class="n">NGC7027</span>                    <span class="n">L</span><span class="o">-</span><span class="n">Pointing</span>    <span class="n">col</span><span class="o">*=-</span><span class="mf">2.6</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">2.2</span>      
+      <span class="mi">9474</span>       <span class="n">NRAO530</span>                    <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">10.7</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">4.5</span>    
+      <span class="mi">9475</span>       <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">75_0.00</span>         <span class="n">OTF</span>
+      <span class="mi">9476</span>       <span class="n">GLO_LAT_19</span><span class="o">.</span><span class="mf">40_0.00</span>         <span class="n">OTF</span> 
+      <span class="mi">9477</span>       <span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>                   <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">0.6</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">6.9</span>
+      <span class="mi">9478</span>       <span class="n">GLO_LON_37</span><span class="o">.</span><span class="mf">00_1.00</span>         <span class="n">OTF</span>           
+      <span class="mi">9479</span>       <span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>                   <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=-</span><span class="mf">0.0</span> <span class="n">NulE</span><span class="o">=-</span><span class="mf">5.0</span>
+      <span class="mi">9480</span>       <span class="n">GLO_LAT_52</span><span class="o">.</span><span class="mf">60_0.00</span>         <span class="n">OTF</span> 
+      <span class="mi">9481</span>       <span class="n">W3OH</span>                       <span class="n">Pointing</span>      <span class="n">col</span><span class="o">*=</span><span class="mf">0.4</span> <span class="n">NulE</span><span class="o">=</span><span class="mf">0.5</span>
+      <span class="mi">9482</span>       <span class="n">W3OH</span>                       <span class="n">Onoff</span>         <span class="n">Shape</span> <span class="n">OK</span>
 </pre></div>
 
      </div>
