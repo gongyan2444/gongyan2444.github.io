@@ -108,47 +108,124 @@
                     <font size="4px">
                     <ul id="mylist">
                         <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.iram-institute.org/EN/content-page-57-7-57-0-0-0.html">IRAM</a>: IRAM-30m and NOEMA, 3 mm, 2 mm, 1.3 mm, 0.85 mm, <strong><font color="red">deadline: September 14, 2018</font></strong>, <a target="_blank" href="https://tapas.iram.es/tapas/">tapas/logs</a> 
+                        <a target="_blank" href="http://www.iram-institute.org/EN/content-page-57-7-57-0-0-0.html">IRAM</a>: IRAM-30m and NOEMA, 3 mm, 2 mm, 1.3 mm, 0.85 mm, <a target="_blank" href="https://tapas.iram.es/tapas/">tapas/logs</a>, <strong><font color="red">deadline: March 17, 2022</font></strong>, remaining time:<a class="text-left" id="iram"> 
+                            </p>
+                        </li>
+
+                        <script>
+                        // Set the date we're counting down to
+                        var countDownDate1 = new Date("Mar 17, 2022 17:00:00 GMT+01:00").getTime();
+                        // Update the count down every 1 second
+                        var x1 = setInterval(function() {
+                          // Get today's date and time
+                          var now1 = new Date().getTime();
+                          // Find the distance between now and the count down date
+                          var distance1 = countDownDate1 - now1;
+                          // Time calculations for days, hours, minutes and seconds
+                          var days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
+                          var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                          var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
+                          var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
+                          // Display the result in the element with id="demo"
+                          document.getElementById("iram").innerHTML =  days1 + "d " + hours1 + "h "  + minutes1 + "m " + seconds1 + "s ";
+                          // If the count down is finished, write some text
+                          if (distance1 < 0) {
+                            clearInterval(x1);
+                            document.getElementById("iram").innerHTML = "EXPIRED";
+                          }
+                        }, 1000);
+                        </script>
+
+
+                        <li><p class="text-left">                        
+                        <a target="_blank" href="http://www.dlh.pmo.cas.cn/dqyd/dqhd/">PMO-13.7m</a>: single-dish, 3 mm, <a target="_blank" href="img/qhz_all.jpg">my panorama of PMO-13.7m</a>, <strong><font color="red">deadline: May--June, 2022</font></strong>
                             </p>
                         </li>
                         <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.dlh.pmo.cas.cn/dqyd/dqhd/">PMO-13.7m</a>: single-dish, 3 mm, <a target="_blank" href="img/qhz_all.jpg">my panorama of PMO-13.7m</a>, <strong><font color="red">deadline: May--June, 2018</font></strong>
+                        <a target="_blank" href="http://www.eaobservatory.org/jcmt/proposals/">JCMT-15m</a>: single-dish, 1.3 mm, 0.85 mm, <s style="color:red">deadline: March 15th, 2018 </s>, <a target="_blank" href="http://omp.eao.hawaii.edu/">OMP</a>,  <a target="_blank" href="http://www.eaobservatory.org/jcmt/instrumentation/heterodyne/data-reduction/reducing-acsis-data/">reducing ACSIS data</a>
                             </p>
                         </li>
                         <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.eaobservatory.org/jcmt/proposals/">JCMT-15m</a>: single-dish, 1.3 mm, 0.85 mm, <strong><font color="red">deadline: March 15th, 2018</font></strong>, <a target="_blank" href="http://omp.eao.hawaii.edu/">OMP</a>,  <a target="_blank" href="http://www.eaobservatory.org/jcmt/instrumentation/heterodyne/data-reduction/reducing-acsis-data/">reducing ACSIS data</a>
+                        <a target="_blank" href="http://www.mpifr-bonn.mpg.de/247288/Call-for-proposals">Effelsberg-100m</a>: single-dish, 1-50 GHz, <a target="_blank" href="img/effelsberg.jpeg">my montage</a>, <a target="_blank" href="img/eff1.jpeg">eff1</a>, <a target="_blank" href="img/eff2.jpeg">eff2</a>, <a target="_blank" href="eff-sphere.html">720 degree view</a>, <strong><font color="red">deadline: June 03, 2022</font>, </strong></a>, remaining time:<a class="text-left" id="effelsberg"> 
+                            </p>
+                        </li>
+                        <!-- Display the countdown timer in an element  -->
+                        <script>
+                        // Set the date we're counting down to
+                        var countDownDate = new Date("June 03, 2022 00:00:00 GMT+00:00").getTime();
+                        // Update the count down every 1 second
+                        var x = setInterval(function() {
+                          // Get today's date and time
+                          var now = new Date().getTime();
+                          // Find the distance between now and the count down date
+                          var distance = countDownDate - now;
+                          // Time calculations for days, hours, minutes and seconds
+                          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                          // Display the result in the element with id="demo"
+                          document.getElementById("effelsberg").innerHTML =  days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
+                          // If the count down is finished, write some text
+                          if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("effelsberg").innerHTML = "EXPIRED";
+                          }
+                        }, 1000);
+                        </script>
+
+
+                        <li><p class="text-left">                        
+                        <a target="_blank" href="http://www.apex-telescope.org/">APEX-12 m</a>: single-dish, above 1 mm,<a target="_blank" href="apex-sphere.html">4pi view</a>, <strong><font color="red">deadline:</font></strong> Feb 18, 2022,</a> remaining time: <a class="text-left" id="apex"> 
+                            </p>
+                        </li>
+                        <!-- Display the countdown timer in an element -->
+                        <script>
+                        // Set the date we're counting down to
+                        var countDownDate2 = new Date("Feb 18, 2022 18:00:00 GMT+01:00").getTime();
+                        // Update the count down every 1 second
+                        var x2 = setInterval(function() {
+                          // Get today's date and time
+                          var now2 = new Date().getTime();
+                          // Find the distance between now and the count down date
+                          var distance2 = countDownDate2 - now2;
+                          // Time calculations for days, hours, minutes and seconds
+                          var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+                          var hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                          var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+                          var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+                          // Display the result in the element with id="demo"
+                          document.getElementById("apex").innerHTML =  days2 + "d " + hours2 + "h "  + minutes2 + "m " + seconds2 + "s ";
+                          // If the count down is finished, write some text
+                          if (distance2 < 0) {
+                            clearInterval(x2);
+                            document.getElementById("apex").innerHTML = "EXPIRED";
+                          }
+                        }, 1000);
+                        </script>
+
+                        <li><p class="text-left">                        
+                        <a target="_blank" href="https://almascience.nrao.edu/proposing/call-for-proposals">ALMA</a>: interferometer, mm and submm wavelengths, <s style="color:red"> deadline: April 20, 2018</s>
                             </p>
                         </li>
                         <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.mpifr-bonn.mpg.de/247288/Call-for-proposals">Effelsberg-100m</a>: single-dish, 1-50 GHz, <a target="_blank" href="img/effelsberg.jpeg">my montage</a>, <a target="_blank" href="img/eff1.jpeg">eff1</a>, <a target="_blank" href="img/eff2.jpeg">eff2</a>, <a target="_blank" href="eff-sphere.html">720 degree view</a>, <strong><font color="red">deadline: June 10, 2018</font></strong>
+                        <a target="_blank" href="https://science.nrao.edu/observing/call-for-proposals">NRAO</a>: GBT-100m, JVLA, VLBA, 1-50 GHz, <s style="color:red"> deadline: Aug. 1, 2018</s> 
                             </p>
                         </li>
                         <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.apex-telescope.org/">APEX-12 m</a>: single-dish, above 1 mm,<a target="_blank" href="apex-sphere.html">4pi view</a>
+                        <a target="_blank" href="http://aro.as.arizona.edu/~aro/proposal_submission_information.htm">ARO</a>: SMT-10 m, 211-720 GHz, KP-12 m, 84-116 GHz <strong><font color="red">deadline: TBD, 2022</font></strong> 
                             </p>
                         </li>
                         <li><p class="text-left">                        
-                        <a target="_blank" href="https://almascience.nrao.edu/proposing/call-for-proposals">ALMA</a>: interferometer, mm and submm wavelengths, <strong><font color="red">deadline: April 20, 2018</font></strong>
+                        <a target="_blank" href="http://www.nro.nao.ac.jp/~nro45mrt/html/prop/index-e.html#submission">NROJ</a>: ASTE-10 m, Nobeyama-45 m
                             </p>
                         </li>
                         <li><p class="text-left">                        
-                        <a target="_blank" href="https://science.nrao.edu/observing/call-for-proposals">NRAO</a>: GBT-100m, JVLA, VLBA, 1-50 GHz, <strong><font color="red">deadline: Aug. 1, 2018</font></strong>
+                        <a target="_blank" href="http://www.atnf.csiro.au/observers/index.html">ANTF</a>: ATCA, Parkes, LBA, Mopra, Tidbinbilla 70-m and 34-m antennas, ASKAP, <strong><font color="red">deadline: Dec. 15 2022</font></strong>
                             </p>
                         </li>
                         <li><p class="text-left">                        
-                        <a target="_blank" href="http://aro.as.arizona.edu/~aro/proposal_submission_information.htm">ARO</a>: SMT-10 m, 211-720 GHz, KP-12 m, 84-116 GHz <strong><font color="red">deadline: TBD, 2018</font></strong>  Prof. Fang
-                            </p>
-                        </li>
-                        <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.nro.nao.ac.jp/~nro45mrt/html/prop/index-e.html#submission">NROJ</a>: ASTE-10 m, Nobeyama-45 m, <strong><font color="red">deadline: TBD, 2018</font></strong>
-                            </p>
-                        </li>
-                        <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.atnf.csiro.au/observers/index.html">ANTF</a>: ATCA, Parkes, LBA, Mopra, Tidbinbilla 70-m and 34-m antennas, ASKAP, <strong><font color="red">deadline: Dec. 15 2018</font></strong>
-                            </p>
-                        </li>
-                        <li><p class="text-left">                        
-                        <a target="_blank" href="http://www.chalmers.se/en/centres/oso/radio-astronomy/proposals/Pages/Onsala-20m-proposals.aspx">Onsala 20m</a>: single-dish, <strong><font color="red">deadline: 14 Oct. 2018</font></strong>,special: 67-87 GHz, <a target="_blank" href="onsala-sphere.html">720 degree view</a>
+                        <a target="_blank" href="http://www.chalmers.se/en/centres/oso/radio-astronomy/proposals/Pages/Onsala-20m-proposals.aspx">Onsala 20m</a>: single-dish, <strong><font color="red">deadline: 14 Oct. 2022</font></strong>,special: 67-87 GHz, <a target="_blank" href="onsala-sphere.html">720 degree view</a>
                             </p>
                         </li>
                         <li><p class="text-left">                        
@@ -484,6 +561,10 @@
                         </li>
                         <li><p class="text-left">                        
                         <a target="_blank" href="https://blog.mpifr-bonn.mpg.de/karlmenten/">The homepage of Prof. Dr. Karl M. Menten</a>
+                            </p>
+                        </li>
+                        <li><p class="text-left">                        
+                        <a target="_blank" href="https://yaotingyan.github.io/">The homepage of Yaoting Yan</a>
                             </p>
                         </li>
                         <li><p class="text-left">                        
