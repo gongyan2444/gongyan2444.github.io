@@ -14296,6 +14296,66 @@ a.anchor-link {
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 05/08/2022; Gong</span>
+<span class="c1"># start 05/08/2022,19:00 - end 06/08/2022, 2:00</span>
+<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay 21,-2 / restart 21 22 /restart 11 -2</span>
+<span class="c1"># receiver loading: OK</span>
+<span class="c1"># note: checked specpol on scan 759 with toolbox2 adjust/adjfit</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
+<span class="c1">##########################</span>
+<span class="mi">824</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">POINT</span>     <span class="c1"># Col*=1.7&quot; NulE=9.9&quot;     el=69   </span>
+<span class="mi">825</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">FOCUS</span>     <span class="c1"># zlin=0.4 el=69   offset too much, to be checked</span>
+<span class="mi">826</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">POINT</span>     <span class="c1"># Col*=-0.9&quot; NulE=8.7&quot;     el=69   </span>
+<span class="mi">827</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">FOCUS</span>     <span class="c1"># zlin=-1.8 el=69   better fitting, needed to be confirmed</span>
+<span class="mi">828</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">POINT</span>     <span class="c1"># Col*=-2.0&quot; NulE=8.1&quot;     el=68</span>
+<span class="mi">829</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">FOCUS</span>     <span class="c1"># zlin=-1.8 el=68   confirmed</span>
+<span class="mi">830</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">POINT</span>     <span class="c1"># Col*=-1.1&quot; NulE=10.8&quot;     el=68</span>
+<span class="mi">831</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">L</span><span class="o">-</span><span class="n">POINT</span>   <span class="c1"># Col*=-1.4&quot; NulE=10.8&quot;     el=68</span>
+<span class="mi">832</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">CalMap</span>    <span class="c1"># Cal3C286v2, el=67  </span>
+<span class="mi">833</span>    <span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>              <span class="n">Pointing</span>  <span class="c1"># Col*=-6.0&quot; NulE=3.6&quot;  el=28</span>
+<span class="mi">834</span>    <span class="n">GLO_LON_57</span><span class="o">.</span><span class="mf">00_0.20</span>    <span class="n">OTF</span>       <span class="c1"># el =27</span>
+<span class="mi">835</span>    <span class="n">NGC7027</span>               <span class="n">POINT</span>     <span class="c1"># Col*=0.1&quot; NulE=0.4&quot;      el=37   </span>
+<span class="mi">836</span>    <span class="n">NGC7027</span>               <span class="n">FOCUS</span>     <span class="c1"># z=-2.7   el=37  </span>
+<span class="mi">837</span>    <span class="n">NGC7027</span>               <span class="n">POINT</span>     <span class="c1"># Col*=6.3&quot; NulE=-2.7&quot;      el=37  </span>
+<span class="mi">838</span>    <span class="n">NGC7027</span>               <span class="n">L</span><span class="o">-</span><span class="n">POINT</span>   <span class="c1">#  !! No data restart SPECPOL 21 22</span>
+<span class="mi">839</span>    <span class="n">NGC7027</span>               <span class="n">POINT</span>     <span class="c1"># Col*=-7.0&quot; NulE=-1.5&quot;      el=39 </span>
+<span class="mi">840</span>    <span class="n">NRAO530</span>               <span class="n">Pointing</span>  <span class="c1"># onlplot wrong pointing results, restart onlplot</span>
+<span class="mi">842</span>    <span class="n">NRAO530</span>               <span class="n">Pointing</span>  <span class="c1"># Col*=-14.0&quot; NulE=-1.5&quot;      el=24</span>
+<span class="mi">843</span>    <span class="n">GLO_LAT_11</span><span class="o">.</span><span class="mf">75_0.00</span>    <span class="n">OTF</span>       <span class="c1"># el=15 canceled due to the error in the previous pointing</span>
+<span class="c1">###  restart onlplot/SPECPOL/fitswriter </span>
+<span class="mi">844</span>    <span class="n">NRAO530</span>               <span class="n">Pointing</span>  <span class="c1"># Col*=-21.2&quot; NulE=2.6&quot;      el=25</span>
+<span class="mi">845</span>    <span class="n">NRAO530</span>               <span class="n">Pointing</span>  <span class="c1"># Col*=-16.6&quot; NulE=-0.6&quot;      el=25 confirm pointing</span>
+<span class="mi">846</span>    <span class="n">GLO_LON_7</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.85</span>    <span class="n">OTF</span>       <span class="c1"># el=12</span>
+<span class="mi">847</span>    <span class="n">GLO_LON_7</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.75</span>    <span class="n">OTF</span>       <span class="c1"># el=14</span>
+<span class="mi">848</span>    <span class="n">GLO_LON_7</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.65</span>    <span class="n">OTF</span>       <span class="c1"># el=15</span>
+<span class="mi">849</span>    <span class="n">GLO_LON_7</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.55</span>    <span class="n">OTF</span>       <span class="c1"># el=15</span>
+<span class="mi">850</span>    <span class="n">GLO_LAT_11</span><span class="o">.</span><span class="mf">75_0.00</span>    <span class="n">OTF</span>       <span class="c1"># el=18</span>
+<span class="mi">851</span>    <span class="n">GLO_LAT_11</span><span class="o">.</span><span class="mf">85_0.00</span>    <span class="n">OTF</span>       <span class="c1"># el=17</span>
+<span class="mi">852</span>    <span class="n">NRAO530</span>               <span class="n">Pointing</span>  <span class="c1"># Col*=-8.7&quot; NulE=-5.3&quot; el=18</span>
+<span class="mi">853</span>    <span class="n">GLO_LAT_20</span><span class="o">.</span><span class="mf">00_0.00</span>    <span class="n">OTF</span>       <span class="c1"># el=20</span>
+<span class="mi">854</span>    <span class="n">NGC7027</span>               <span class="n">POINT</span>     <span class="c1"># Col*=0.1&quot; NulE=-10.4&quot;      el=80   </span>
+<span class="mi">855</span>    <span class="n">NGC7027</span>               <span class="n">FOCUS</span>     <span class="c1"># z=-3.3   el=80   </span>
+<span class="mi">856</span>    <span class="n">NGC7027</span>               <span class="n">POINT</span>     <span class="c1"># Col*=-1.1&quot; NulE=-6.7&quot;      el=80  </span>
+<span class="mi">857</span>    <span class="n">NGC7027</span>               <span class="n">L</span><span class="o">-</span><span class="n">POINT</span>   <span class="c1"># Col*=-1.0&quot; NulE=-4.2&quot;      el=80  </span>
+<span class="mi">858</span>    <span class="n">NGC7027</span>               <span class="n">L</span><span class="o">-</span><span class="n">POINT</span>   <span class="c1"># Col*=1.6&quot; NulE=-0.1&quot;      el=80  </span>
+<span class="mi">859</span>    <span class="n">NGC7027</span>               <span class="n">L</span><span class="o">-</span><span class="n">POINT</span>   <span class="c1"># Col*=2.5&quot; NulE=0.0&quot;      el=80 </span>
+<span class="mi">860</span>    <span class="n">W75NGAL</span>               <span class="n">ONOFF</span>     <span class="c1"># ok! el=81  </span>
+<span class="mi">861</span>    <span class="n">W75NGAL</span>               <span class="n">ONOFF</span>     <span class="c1"># ok! el=81  </span>
+<span class="mi">862</span>    <span class="n">W75NGAL</span>               <span class="n">ONOFF</span>     <span class="c1"># ok! el=81  </span>
+<span class="mi">863</span>    <span class="n">W75NGAL</span>               <span class="n">ONOFF</span>     <span class="c1"># ok! el=81  </span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
