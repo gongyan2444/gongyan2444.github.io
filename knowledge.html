@@ -91,6 +91,7 @@ For a new Macbook, in case of issues with gfortran ("ld: library not found for -
 	replace all "foo" in *.txt with "bar". </br>
 	Merge pdf files</br>
 	gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=merged.pdf *pdf </br>
+	gs -sDEVICE=pdfwrite -sOutputFile="output.pdf" -dNOPAUSE -dEPSCrop -c "<</Orientation 0>> setpagedevice" -f *.eps -c quit </br>
 	Using VNC:</br>
 	vnc </br>
 	vncserver -geometry 1360x850 -depth 16 :1 </br>
