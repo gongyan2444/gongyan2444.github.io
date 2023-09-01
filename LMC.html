@@ -59,11 +59,11 @@
     <a  name="services"></a>
     <div class="content-section-a">
         <header class="entry-header">
-            <h2 class="text-left">Large Magellanic Cloud:</h2>
+            <h2 class="text-left">Large Magellanic Cloud</h2>
         </header>
 
         <!-- insert this snippet where you want Aladin Lite viewer to appear -->
-        <div id="aladin-lite-div" style="width:1000px;height:1000px;"></div>
+        <div id="aladin-lite-div" style="width:900px;height:600px;"></div>
         <input id="DSS" type="radio" name="survey" value="P/DSS2/color"><label for="DSS">DSS color<label>
         <input id="DSS-blue" type="radio" name="survey" value="P/DSS2/blue"><label for="DSS-blue">DSS blue<label>
         <input id="2MASS" type="radio" name="survey" value="P/2MASS/color"><label for="2MASS">2MASS<label>
@@ -74,7 +74,7 @@
         <script type="text/javascript">
         let aladin;
         A.init.then(() => {
-            aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:4, target: "05 24 08 -68 54 52.4"});
+            aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:12, target: "05 24 08 -68 54 52.4"});
 
             <!-- This is for the button of different surveys -->
             $('input[name=survey]').change(function() {
@@ -85,17 +85,22 @@
             <!-- This is for sources of interest. -->
             var marker1 = A.marker(83.86675000, -69.26974167, {popupTitle: 'SN 1987A', popupDesc: 'Object type: Supernova/SNR'});
             var marker2 = A.marker(84.67665000, -69.10093333, {popupTitle: '30 Dor/NGC2070/Tarantula', popupDesc: 'Object type: HII'});
-            var marker3 = A.marker(84.67500000, -69.10000000, {popupTitle: 'NGC2070/Tarantula', popupDesc: 'Object type: HII'});
+            var marker3 = A.marker(78.34041667, -69.35916667 , {popupTitle: 'N113', popupDesc: 'Object type: HII'});
             var marker4 = A.marker(83.84791667, -67.58222222, {popupTitle: "NGC2032/Dragon's head", popupDesc: 'Object type: HII'});
+            var marker5 = A.marker(81.35666667, -65.99033333, {popupTitle: "N49B", popupDesc: 'Object type: SNR'});
+            var marker6 = A.marker(84.88545833, -69.76742778, {popupTitle: 'N159W', popupDesc: 'Object type: HMSF'});
+            var marker7 = A.marker(80.52875000, -67.94611111, {popupTitle: 'N44', popupDesc: 'Object type: HII'});
+            var marker8 = A.marker(74.21416667, -66.40666667, {popupTitle: 'N11/the Bean nebula', popupDesc: 'Object type: HII'});
+
             var markerLayer = A.catalog();
             aladin.addCatalog(markerLayer);
-            markerLayer.addSources([marker1, marker2, marker3, marker4]);
+            markerLayer.addSources([marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8]);
 
             <!-- From online catalogs. -->
 
             var overlay = A.graphicOverlay({color: '#ee2345', lineWidth: 3}); 
             aladin.addOverlay(overlay);
-            overlay.add(A.circle(83.86675000, -69.26974167, 0.5, {color: 'cyan'})); // circle radius in degrees
+            overlay.add(A.circle(81.35666667, -65.99033333, 0.043333333333333335, {color: 'cyan'})); // circle radius in degrees
 
         });
         </script>
