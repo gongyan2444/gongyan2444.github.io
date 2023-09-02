@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GLO2306</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>GLO2308</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14262,22 +14262,34 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 26/06/2023; Gong, Sarwar</span>
-<span class="c1"># start 26/06/2023,02:00 - end 26/06/2022,07:00  </span>
-<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay 23, 22</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 13/08/2023; Gong</span>
+<span class="c1"># start 13/08/2023,21:00 - end 04/07/2023,7:00  </span>
+<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay -1, 22</span>
 <span class="c1"># receiver loading: ok</span>
-<span class="c1"># note: checked specpol on scan 8337  with toolbox2 adjust/adjfit</span>
-<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6690-6770 MHz</span>
-<span class="c1">##########################</span>
-<span class="mi">3110</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">POINT</span>      <span class="c1"># Col*=14.8&quot; NulE=-7.3&quot; el=22.8 to 23.1 deg</span>
-<span class="mi">3111</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">FOCUS</span>      <span class="c1"># zlin=-3.5mm  el=22.65 deg</span>
-<span class="mi">3112</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">LPOINT</span>     <span class="c1"># Col*=13.6&quot; NulE=-5.4&quot; el=21.9 to 22.3 deg</span>
-<span class="mi">3113</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">CalMAP</span>     <span class="c1"># calmapv2_lat; el=20.4 to 21.7 deg; </span>
-<span class="mi">3114</span>    <span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>              <span class="n">Pointing</span>   <span class="c1"># Col*=1.60&quot; NulE=-7.9&quot; el=28.7 to 29.0 deg</span>
-<span class="mi">3115</span>    <span class="n">GLO_LON_25</span><span class="o">.</span><span class="mf">00_1.00</span>    <span class="n">OTF</span>	  <span class="c1"># el = 22.6 to 31.0 deg</span>
-<span class="mi">3116</span>    <span class="n">GLO_LON_25</span><span class="o">.</span><span class="mf">00_0.80</span>    <span class="n">OTF</span>        <span class="c1"># el = 14.3 to 24.3 deg</span>
-<span class="mi">3117</span>	<span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>              <span class="n">Pointing</span>   <span class="c1"># Col*=10.1&quot; NulE=-3.8&quot; el= 20.6 to 21.0 deg</span>
-<span class="mi">3118</span>    <span class="n">GLO_LON_39</span><span class="o">.</span><span class="mf">00_0.40</span>    <span class="n">OTF</span>        <span class="c1"># el = 15.6 to 28.2 deg	</span>
+<span class="c1"># note: checked specpol on scan 4251  with toolbox2 adjust/adjfit</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
+<span class="c1">############################ 3C286 is already invisible ###############</span>
+<span class="mi">8708</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">POINT</span>    <span class="c1"># Col*=-3.2&quot; NulE=-11.5&quot; el=52deg</span>
+<span class="mi">8709</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">FOCUS</span>    <span class="c1"># zlin=-2.4mm  el=52deg</span>
+<span class="mi">8710</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">POINT</span>    <span class="c1"># Col*=-4.8&quot; NulE=-11.3&quot; el=51deg</span>
+<span class="mi">8711</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">CalMap</span>   <span class="c1"># el=49deg</span>
+<span class="mi">8712</span>    <span class="n">NRAO530</span>              <span class="n">POINT</span>    <span class="c1"># Col*=-10.7&quot; NulE=-11.3&quot; el=25deg</span>
+<span class="mi">8713</span>    <span class="n">GLO_LAT_10</span><span class="o">.</span><span class="mf">35_0.00</span>   <span class="n">OTF</span>      <span class="c1"># el=16deg</span>
+<span class="mi">8714</span>    <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">75_0.00</span>   <span class="n">OTF</span>      <span class="c1"># el=20deg</span>
+<span class="mi">8715</span>    <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">85_0.00</span>   <span class="n">OTF</span>      <span class="c1"># el=22deg</span>
+<span class="mi">8716</span>    <span class="n">GLO_LAT_14</span><span class="o">.</span><span class="mf">95_0.00</span>   <span class="n">OTF</span>      <span class="c1"># el=22deg</span>
+<span class="mi">8717</span>    <span class="n">NRAO530</span>              <span class="n">POINT</span>    <span class="c1"># Col*=-6.2&quot; NulE=-21.2&quot; el=23deg</span>
+<span class="mi">8718</span>    <span class="n">GLO_LAT_21</span><span class="o">.</span><span class="mf">40_0.80</span>   <span class="n">OTF</span>      <span class="c1"># el=25deg</span>
+<span class="mi">8719</span>    <span class="n">GLO_LON_25</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">1.00</span>  <span class="n">OTF</span>      <span class="c1"># el=22deg</span>
+<span class="mi">8720</span>    <span class="n">GLO_LON_27</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">1.00</span>  <span class="n">OTF</span>      <span class="c1"># el=17deg</span>
+<span class="mi">8721</span>    <span class="n">GLO_LON_27</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.20</span>  <span class="n">OTF</span>      <span class="c1"># el=8.5deg ?!</span>
+<span class="mi">8722</span>    <span class="mi">1923</span><span class="o">+</span><span class="mi">210</span>             <span class="n">OTF</span>      <span class="c1"># Col*=-1.8&quot; NulE=-14.0&quot; el=35deg</span>
+<span class="mi">8723</span>    <span class="n">GLO_LON_51</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">1.05</span>  <span class="n">OTF</span>      <span class="c1"># el=25deg</span>
+<span class="mi">8724</span>    <span class="n">GLO_LAT_51</span><span class="o">.</span><span class="mf">00_0.00</span>   <span class="n">OTF</span>      <span class="c1"># el=16deg</span>
+<span class="mi">8725</span>    <span class="n">GLO_LAT_59</span><span class="o">.</span><span class="mf">80_0.00</span>   <span class="n">OTF</span>      <span class="c1"># el=14deg</span>
+<span class="mi">8726</span>    <span class="n">NGC7027</span>              <span class="n">POINT</span>    <span class="c1"># el=40deg</span>
+<span class="mi">8727</span>    <span class="n">NGC7027</span>              <span class="n">POINT</span>    <span class="c1"># el=40deg</span>
+<span class="mi">8728</span>    <span class="n">W3OH</span>                 <span class="n">POINT</span>    <span class="c1"># el=78deg</span>
 </pre></div>
 
      </div>
@@ -14291,28 +14303,26 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 27/06/2023; Gong, Sarwar</span>
-<span class="c1"># start 26/06/2023,22:00 - end 27/06/2022,07:40  </span>
-<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay -1, -2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Observations 23/08/2023; Gong</span>
+<span class="c1"># start 23/08/2023,19:00 - end 04/07/2023,7:00  </span>
+<span class="c1"># firmware specpol: using automatic setup in obsinp (attenuation 0.5); delay -1, 22</span>
 <span class="c1"># receiver loading: ok</span>
-<span class="c1"># note: checked specpol on scan 3196  with toolbox2 adjust/adjfit</span>
-<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6685-6800 MHz</span>
-<span class="c1">##########################</span>
-<span class="mi">3194</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">POINT</span>      <span class="c1"># Col*=3.2&quot; NulE=-1.7&quot; el=62 deg</span>
-<span class="mi">3195</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">FOCUS</span>      <span class="c1"># zlin=-3.2mm  el=62 deg</span>
-<span class="mi">3196</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">POINT</span>      <span class="c1"># Col*=0.8&quot; NulE=-0.8&quot; el=61.5 deg</span>
-<span class="mi">3197</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">LPOINT</span>     <span class="c1"># Col*=-0.9&quot; NulE=1.9&quot; el=60 deg</span>
-<span class="mi">3198</span>    <span class="mi">3</span><span class="n">C286</span>                 <span class="n">CalMAP</span>     <span class="c1"># calmapv2_lat; el=58 deg; </span>
-<span class="mi">3199</span>    <span class="n">NRAO530</span>               <span class="n">Pointing</span>   <span class="c1"># Col*=1.8&quot; NulE=-0.2&quot; el=22.3 deg</span>
-<span class="mi">3200</span>    <span class="n">GLO_LON_25</span><span class="o">.</span><span class="mf">00_0.40</span>    <span class="n">OTF</span>	  <span class="c1"># el =19.1 to 29.8 deg</span>
-<span class="mi">3201</span>    <span class="n">GLO_LON_25</span><span class="o">.</span><span class="mi">00</span><span class="n">_</span><span class="o">-</span><span class="mf">0.80</span>   <span class="n">OTF</span>        <span class="c1"># el =26.3 to 32.8 deg</span>
-<span class="mi">3202</span>    <span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>              <span class="n">Pointing</span>   <span class="c1"># Col*=4.7&quot; NulE=-4.2&quot; el=22.3 deg	</span>
-<span class="mi">3203</span>    <span class="n">GLO_LAT_24</span><span class="o">.</span><span class="mf">60_0.00</span>    <span class="n">OTF</span>        <span class="c1"># el =29.5 to 32.6 deg</span>
-<span class="mi">3204</span>    <span class="n">GLO_LAT_25</span><span class="o">.</span><span class="mf">40_0.00</span>    <span class="n">OTF</span>        <span class="c1"># el =25.3 to 31.7 deg</span>
-<span class="mi">3205</span>    <span class="n">GLO_LAT_25</span><span class="o">.</span><span class="mf">80_0.00</span>    <span class="n">OTF</span>        <span class="c1"># el = 18.3 to 26.8 deg</span>
-<span class="mi">3206</span>    <span class="mi">1749</span><span class="o">+</span><span class="mi">096</span>              <span class="n">Pointing</span>   <span class="c1"># Col*=16.1&quot; NulE=-8.9&quot; el=26 deg	</span>
-<span class="mi">3207</span>    <span class="n">GLO_LON_39</span><span class="o">.</span><span class="mf">00_0.60</span>    <span class="n">OTF</span>        <span class="c1"># el =20.5 to 32.7 deg</span>
-<span class="mi">3208</span>    <span class="n">GLO_LAT_42</span><span class="o">.</span><span class="mf">40_0.00</span>    <span class="n">OTF</span>        <span class="c1"># el =12.6 to 24.4 deg   			# Note: After subscan 28 source was very low (below 15 deg)</span>
+<span class="c1"># note: checked specpol on scan 4251  with toolbox2 adjust/adjfit</span>
+<span class="c1"># for pointing/focus used FeBe S45mm-SPECPOL, BE Section 05 (BB-02 7000M FEED-01 X), 6600-6730 MHz</span>
+<span class="c1">############################ 3C286 is already invisible ###############</span>
+<span class="mi">9830</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">POINT</span>    <span class="c1"># Col*=-4.2&quot; NulE=-0.7&quot; el=58deg</span>
+<span class="mi">9831</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">FOCUS</span>    <span class="c1"># zlin=-0.5mm  el=58deg</span>
+<span class="mi">9832</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">POINT</span>    <span class="c1"># Col*=-4.2&quot; NulE=-0.7&quot; el=57deg</span>
+<span class="mi">9833</span>    <span class="mi">3</span><span class="n">C286</span>                <span class="n">CalMap</span>   <span class="c1"># el=56deg</span>
+<span class="mi">9834</span>    <span class="mi">1510</span><span class="o">-</span><span class="mi">089</span>             <span class="n">POINT</span>    <span class="c1"># Col*=-8.5&quot; NulE=-2.1&quot; el=29deg</span>
+<span class="mi">9835</span>    <span class="n">ZETAOPH</span>              <span class="n">OTF</span>      <span class="c1"># el=29deg</span>
+<span class="mi">9836</span>    <span class="n">ZETAOPH</span>              <span class="n">OTF</span>      <span class="c1"># el=28deg</span>
+<span class="mi">9837</span>    <span class="n">NRAO530</span>              <span class="n">POINT</span>    <span class="c1"># Col*=-11.2&quot; NulE=-11.9&quot; el=26deg</span>
+<span class="mi">9838</span>    <span class="n">GLO_LAT_25</span><span class="o">.</span><span class="mf">60_0.00</span>   <span class="n">OTF</span>      <span class="c1"># el=28deg failed</span>
+<span class="mi">9839</span>    <span class="mi">1741</span><span class="o">-</span><span class="mi">038</span>             <span class="n">POINT</span>    <span class="c1"># Col*=-10.1&quot; NulE=-7.7&quot; el=35deg</span>
+<span class="mi">9840</span>    <span class="n">GLO_LAT_25</span><span class="o">.</span><span class="mf">60_0.00</span>   <span class="n">OTF</span>      <span class="c1"># failed</span>
+<span class="mi">9841</span>    <span class="n">GLO_LAT_25</span><span class="o">.</span><span class="mf">60_0.00</span>   <span class="n">OTF</span>      <span class="c1"># failed</span>
+<span class="mi">9842</span>    <span class="n">GLO_LAT_25</span><span class="o">.</span><span class="mf">60_0.00</span>   <span class="n">OTF</span>      <span class="c1"># failed</span>
 </pre></div>
 
      </div>
