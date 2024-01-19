@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luminosity Calculator</title>
+    <script>
+        function calculate() {
+            // Get the values of input fields a, b, and c
+            var a = parseFloat(document.getElementById('inputA').value);
+            var b = parseFloat(document.getElementById('inputB').value);
+	    var c = parseFloat(document.getElementById('inputC').value);
+
+            // Check if the input values are valid numbers
+            if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+                // Perform the addition
+                var flux = b*1e-23*1e5/2.99792458e10*c*1e9;
+                var d    = a*1000*3.086e18
+                var Ls = 4*Math.PI*d**2*flux
+                var Ls2 = Ls/3.9e33
+                var Ls3 = Ls/6.6260755e-27/c/1e9
+
+                var fixLs = parseFloat(Ls.toExponential(3));
+                var fixLs2 = parseFloat(Ls2.toExponential(3));
+                var fixLs3 = parseFloat(Ls3.toExponential(3));
+
+                // Display the result in the output field
+                document.getElementById('outputD').value = fixLs;
+                document.getElementById('outputE').value = fixLs2;
+                document.getElementById('outputF').value = fixLs3;
+            } else {
+                // Display an error message if input values are not valid numbers
+                document.getElementById('outputD').value = "Invalid input";
+                document.getElementById('outputE').value = "Invalid input";
+                document.getElementById('outputF').value = "Invalid input";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Luminosity Calculator (designed for radio astronomy)</h1>
+    <label for="inputA">Enter D (kpc):</label>
+    <input type="number" id="inputA"><br>
+
+    <label for="inputB">Enter &#x222b; S<sub>&#957;</sub>dv (Jy km s<sup>-1</sup>):</label>
+    <input type="number" id="inputB"><br>
+
+    <label for="inputC">Enter frequency (GHz):</label>
+    <input type="number" id="inputC"><br>
+
+    <button onclick="calculate()">Calculate</button><br>
+
+    <label for="outputD">Luminosity:</label>
+    <input type="text" id="outputD" readonly> <label>erg s<sup>-1</sup></label> <br>
+    <label for="outputD">Luminosity:</label>
+    <input type="text" id="outputE" readonly> <label>L<sub>&#9737;</sub></label> <br>
+    <label for="outputD">Luminosity:</label>
+    <input type="text" id="outputF" readonly> <label>photon s<sup>-1</sup></label>
+</body>
+</html>
+
+
