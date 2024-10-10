@@ -122,6 +122,11 @@ For a new Macbook, in case of issues with gfortran ("ld: library not found for -
 	vnc://localhost:5902</br>
 	copy files from remote ip with different ports: </br>
 	rsync -rvz -e 'ssh -p xxxx' --progress * xxx@ip1.ip2.ip3.ip4:~/ </br>
+	Tunneling scp:
+	In terminal 1, > ssh -A ygong@portal.mpifr-bonn.mpg.de # enabling the forwarding</br>
+	In terminal 2, > scp -o ProxyJump=ygong@portal.mpifr-bonn.mpg.de myfile ygong@mcn15:/diskb/ygong/ # directly toward mcn15</br>
+
+
 	<strong><font color="red">Planck data</font></strong> </br>
 	<p style="text-align:center"><img class="img-responsive" src="img/Planck.jpeg" alt=""></p>
 	<strong><font color="red">Ionization potential and dissociation energy</font></strong> </br>
