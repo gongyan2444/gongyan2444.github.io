@@ -1,56 +1,528 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Luminosity Calculator</title>
-    <script>
-        function calculate() {
-            // Get the values of input fields a, b, and c
-            var a = parseFloat(document.getElementById('inputA').value);
-            var b = parseFloat(document.getElementById('inputB').value);
-	    var c = parseFloat(document.getElementById('inputC').value);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Radio astronomy luminosity calculator: convert distance, velocity-integrated line flux and frequency into luminosity.">
+    <title>Luminosity Calculator · Radio Astronomy</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F97316' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='2' fill='%23F97316' stroke='none'/%3E%3Cpath d='M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5'/%3E%3Cpath d='M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5'/%3E%3Cpath d='M4.9 19.1C1 15.2 1 8.8 4.9 4.9'/%3E%3Cpath d='M19.1 4.9c3.9 3.9 3.9 10.3 0 14.2'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1C1917;
+            --card: #242019;
+            --card-soft: #2A241D;
+            --field: rgba(0, 0, 0, 0.28);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text: #F5F5F4;
+            --muted: #A8A29E;
+            --accent: #F97316;
+            --accent-strong: #EA580C;
+            --accent-soft: rgba(249, 115, 22, 0.12);
+            --value: #FDBA74;
+            --error: #F87171;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+            --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+        }
 
-            // Check if the input values are valid numbers
-            if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
-                // Perform the addition
-                var flux = b*1e-23*1e5/2.99792458e10*c*1e9;
-                var d    = a*1000*3.086e18
-                var Ls = 4*Math.PI*d**2*flux
-                var Ls2 = Ls/3.9e33
-                var Ls3 = Ls/6.6260755e-27/c/1e9
+        * { box-sizing: border-box; }
 
-                var fixLs = parseFloat(Ls.toExponential(3));
-                var fixLs2 = parseFloat(Ls2.toExponential(3));
-                var fixLs3 = parseFloat(Ls3.toExponential(3));
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-ui);
+            font-size: 16px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
 
-                // Display the result in the output field
-                document.getElementById('outputD').value = fixLs;
-                document.getElementById('outputE').value = fixLs2;
-                document.getElementById('outputF').value = fixLs3;
-            } else {
-                // Display an error message if input values are not valid numbers
-                document.getElementById('outputD').value = "Invalid input";
-                document.getElementById('outputE').value = "Invalid input";
-                document.getElementById('outputF').value = "Invalid input";
+        /* Subtle static starfield + warm glow, kept faint to stay out of the way */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 22px 34px, rgba(255,255,255,0.45), transparent 60%),
+                radial-gradient(1px 1px at 148px 92px, rgba(255,255,255,0.30), transparent 60%),
+                radial-gradient(1.4px 1.4px at 64px 178px, rgba(255,255,255,0.22), transparent 60%),
+                radial-gradient(1px 1px at 196px 218px, rgba(255,255,255,0.35), transparent 60%),
+                radial-gradient(1px 1px at 104px 130px, rgba(255,255,255,0.26), transparent 60%),
+                radial-gradient(1.2px 1.2px at 238px 52px, rgba(255,255,255,0.20), transparent 60%);
+            background-size: 260px 260px;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(720px 420px at 50% -12%, rgba(249, 115, 22, 0.10), transparent 65%),
+                radial-gradient(560px 380px at 88% 108%, rgba(249, 115, 22, 0.05), transparent 70%);
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: clamp(24px, 5vw, 56px) 20px 64px;
+        }
+
+        /* ---------- Header ---------- */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 1px solid rgba(249, 115, 22, 0.35);
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: #FDBA74;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .badge svg { width: 14px; height: 14px; }
+
+        h1 {
+            margin: 18px 0 10px;
+            font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        h1 .accent { color: var(--accent); }
+
+        .sub {
+            margin: 0 0 32px;
+            max-width: 52ch;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        /* ---------- Card ---------- */
+        .card {
+            background: linear-gradient(180deg, var(--card-soft), var(--card));
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            padding: clamp(20px, 4vw, 32px);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .card-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ---------- Fields ---------- */
+        .field { margin-bottom: 18px; }
+
+        label {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        label .sym {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: #C0BAB3;
+        }
+
+        .control { display: flex; align-items: stretch; }
+
+        input[type="number"] {
+            flex: 1;
+            min-width: 0;
+            padding: 12px 14px;
+            font: 500 1rem var(--font-mono);
+            color: var(--text);
+            background: var(--field);
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-md) 0 0 var(--radius-md);
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.45);
+            transition: border-color 200ms ease, box-shadow 200ms ease;
+        }
+        input[type="number"]::placeholder {
+            color: rgba(168, 162, 158, 0.55);
+            font-family: var(--font-ui);
+            font-weight: 400;
+        }
+        input[type="number"]:hover { border-color: rgba(255, 255, 255, 0.26); }
+        input[type="number"]:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-color: var(--accent);
+        }
+        input[type="number"].invalid {
+            border-color: var(--error);
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(248, 113, 113, 0.12);
+        }
+
+        /* Hide number spinners: cleaner, and mono scientific values dominate anyway */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+
+        .unit {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+            padding: 0 12px;
+            border: 1px solid var(--border-strong);
+            border-left: none;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            background: rgba(255, 255, 255, 0.045);
+            color: var(--muted);
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
+
+        /* ---------- Error + button ---------- */
+        .error {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 4px 0 0;
+            color: var(--error);
+            font-size: 0.85rem;
+        }
+        .error svg { flex: none; width: 15px; height: 15px; margin-top: 2px; }
+        .error[hidden] { display: none; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px 20px;
+            font: 600 0.95rem var(--font-ui);
+            letter-spacing: 0.01em;
+            color: #1C1917;
+            background: linear-gradient(180deg, #FB823C, var(--accent-strong));
+            border: none;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 24px rgba(234, 88, 12, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+            transition: transform 150ms ease, box-shadow 200ms ease, filter 200ms ease;
+        }
+        .btn svg { width: 16px; height: 16px; }
+        .btn:hover { filter: brightness(1.07); box-shadow: 0 12px 30px rgba(234, 88, 12, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25); }
+        .btn:active { transform: translateY(1px); box-shadow: 0 6px 14px rgba(234, 88, 12, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+        .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+        /* ---------- Results ---------- */
+        .results {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .result {
+            position: relative;
+            padding: 16px 14px 14px;
+            background: rgba(0, 0, 0, 0.22);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .result::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 14px;
+            width: 28px;
+            height: 2px;
+            border-radius: 1px;
+            background: var(--accent);
+            opacity: 0.85;
+        }
+        .result-label {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .result-value {
+            display: block;
+            margin: 8px 0 6px;
+            font: 600 1.05rem var(--font-mono);
+            font-variant-numeric: tabular-nums;
+            color: var(--value);
+            min-height: 1.4em;
+            overflow-wrap: break-word;
+        }
+        .result-value sup { font-size: 0.68em; }
+        .result-unit {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .results.updated .result {
+            animation: pulse-border 700ms ease;
+        }
+        @keyframes pulse-border {
+            0% { border-color: rgba(249, 115, 22, 0.65); box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15); }
+            100% { border-color: var(--border); box-shadow: none; }
+        }
+
+        /* ---------- Method footnote ---------- */
+        .method {
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px dashed var(--border-strong);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        .method h2 {
+            margin: 0 0 8px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .method p { margin: 0 0 6px; }
+        .method .formula {
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 10px 14px;
+            overflow-x: auto;
+        }
+        .method .formula i { color: var(--value); font-style: normal; }
+
+        sub, sup { line-height: 0; }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 560px) {
+            .results { grid-template-columns: 1fr; }
+        }
+
+        /* ---------- Reduced motion ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
             }
         }
-    </script>
+    </style>
 </head>
 <body>
-    <h1>Luminosity Calculator (designed for radio astronomy)</h1>
-    <label for="inputA">Enter D (kpc):</label>
-    <input type="number" id="inputA"><br>
+    <div class="page">
+        <header>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+                    <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/>
+                    <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/>
+                    <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/>
+                    <path d="M19.1 4.9c3.9 3.9 3.9 10.3 0 14.2"/>
+                </svg>
+                Radio Astronomy
+            </span>
+            <h1>Luminosity <span class="accent">Calculator</span></h1>
+            <p class="sub">Convert a velocity-integrated line flux, source distance and observing
+                frequency into the line luminosity and photon emission rate.</p>
+        </header>
 
-    <label for="inputB">Enter &#x222b; S<sub>&#957;</sub>dv (Jy km s<sup>-1</sup>):</label>
-    <input type="number" id="inputB"><br>
+        <main class="card">
+            <p class="card-title">Inputs</p>
+            <form id="calcForm" novalidate>
+                <div class="field">
+                    <label for="inputA">Distance <span class="sym">D</span></label>
+                    <div class="control">
+                        <input type="number" id="inputA" step="any" min="0" inputmode="decimal"
+                               placeholder="e.g. 3.5" autocomplete="off">
+                        <span class="unit">kpc</span>
+                    </div>
+                </div>
 
-    <label for="inputC">Enter frequency (GHz):</label>
-    <input type="number" id="inputC"><br>
+                <div class="field">
+                    <label for="inputB">Integrated flux <span class="sym">&#8747; S<sub>&#957;</sub> dv</span></label>
+                    <div class="control">
+                        <input type="number" id="inputB" step="any" inputmode="decimal"
+                               placeholder="e.g. 1.2" autocomplete="off">
+                        <span class="unit">Jy km s<sup>&#8722;1</sup></span>
+                    </div>
+                </div>
 
-    <button onclick="calculate()">Calculate</button><br>
+                <div class="field">
+                    <label for="inputC">Frequency <span class="sym">&#957;</span></label>
+                    <div class="control">
+                        <input type="number" id="inputC" step="any" min="0" inputmode="decimal"
+                               placeholder="e.g. 230" autocomplete="off">
+                        <span class="unit">GHz</span>
+                    </div>
+                </div>
 
-    <label for="outputD">Luminosity:</label>
-    <input type="text" id="outputD" readonly> <label>erg s<sup>-1</sup></label>, <input type="text" id="outputE" readonly> <label>L<sub>&#9737;</sub></label>, <input type="text" id="outputF" readonly> <label>photon s<sup>-1</sup></label> <br>
+                <p class="error" id="error" role="alert" hidden>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>
+                    </svg>
+                    <span id="errorText"></span>
+                </p>
+
+                <button type="submit" class="btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
+                    </svg>
+                    Calculate
+                </button>
+            </form>
+
+            <section class="results" id="results" aria-label="Results" aria-live="polite">
+                <div class="result">
+                    <span class="result-label">Luminosity</span>
+                    <span class="result-value" id="outputD">&mdash;</span>
+                    <span class="result-unit">erg s<sup>&#8722;1</sup></span>
+                </div>
+                <div class="result">
+                    <span class="result-label">Luminosity</span>
+                    <span class="result-value" id="outputE">&mdash;</span>
+                    <span class="result-unit">L<sub>&#9737;</sub></span>
+                </div>
+                <div class="result">
+                    <span class="result-label">Photon rate</span>
+                    <span class="result-value" id="outputF">&mdash;</span>
+                    <span class="result-unit">photon s<sup>&#8722;1</sup></span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="method">
+            <h2>Method</h2>
+            <p class="formula">L = 4&#960; D&sup2; &middot; (&#957; / <i>c</i>) &middot; &#8747; S<sub>&#957;</sub> dv</p>
+            <p>Assumes <i>c</i> = 2.99792458 &times; 10<sup>10</sup> cm s<sup>&minus;1</sup>,
+               h = 6.6260755 &times; 10<sup>&minus;27</sup> erg s,
+               L<sub>&#9737;</sub> = 3.9 &times; 10<sup>33</sup> erg s<sup>&minus;1</sup>,
+               1 pc = 3.086 &times; 10<sup>18</sup> cm. Results update live as you type.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            var fields = [
+                { id: 'inputA', name: 'Distance' },
+                { id: 'inputB', name: 'Integrated flux' },
+                { id: 'inputC', name: 'Frequency' }
+            ];
+
+            function getField(fid) { return document.getElementById(fid); }
+            function getError() { return document.getElementById('error'); }
+
+            // Format a value as "1.234 × 10^n" HTML, matching parseFloat(x.toExponential(3)) precision
+            function sciHTML(x) {
+                if (!isFinite(x)) return '&mdash;';
+                if (x === 0) return '0';
+                var s = x.toExponential(3);
+                var m = s.match(/^(-?)(\d+(?:\.\d+)?)e([+-]\d+)$/);
+                if (!m) return s;
+                return m[1] + m[2] + ' &times; 10<sup>' + parseInt(m[3], 10) + '</sup>';
+            }
+
+            function calculate(showErrors) {
+                var values = {};
+                var invalid = [];
+
+                fields.forEach(function (f) {
+                    var el = getField(f.id);
+                    var v = parseFloat(el.value);
+                    var ok = !isNaN(v) && (f.id !== 'inputC' || v > 0);
+                    values[f.id] = v;
+                    el.classList.toggle('invalid', showErrors && !ok);
+                    el.setAttribute('aria-invalid', showErrors && !ok ? 'true' : 'false');
+                    if (!ok) invalid.push(f.name);
+                });
+
+                var errorEl = getError();
+                var errorText = document.getElementById('errorText');
+                var results = document.getElementById('results');
+
+                if (invalid.length > 0) {
+                    document.getElementById('outputD').innerHTML = '&mdash;';
+                    document.getElementById('outputE').innerHTML = '&mdash;';
+                    document.getElementById('outputF').innerHTML = '&mdash;';
+                    if (showErrors) {
+                        errorText.textContent = 'Please enter a valid number for: ' + invalid.join(', ') +
+                            (invalid.indexOf('Frequency') >= 0 ? ' (frequency must be greater than zero).' : '.');
+                        errorEl.hidden = false;
+                    }
+                    return false;
+                }
+
+                errorEl.hidden = true;
+
+                // Same physics as the original calculator
+                var a = values.inputA, b = values.inputB, c = values.inputC;
+                var flux = b * 1e-23 * 1e5 / 2.99792458e10 * c * 1e9;
+                var d = a * 1000 * 3.086e18;
+                var Ls = 4 * Math.PI * Math.pow(d, 2) * flux;
+                var Ls2 = Ls / 3.9e33;
+                var Ls3 = Ls / 6.6260755e-27 / c / 1e9;
+
+                document.getElementById('outputD').innerHTML = sciHTML(parseFloat(Ls.toExponential(3)));
+                document.getElementById('outputE').innerHTML = sciHTML(parseFloat(Ls2.toExponential(3)));
+                document.getElementById('outputF').innerHTML = sciHTML(parseFloat(Ls3.toExponential(3)));
+
+                // Brief highlight so the update is noticeable
+                results.classList.remove('updated');
+                void results.offsetWidth; // restart the animation
+                results.classList.add('updated');
+                return true;
+            }
+
+            document.getElementById('calcForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                calculate(true);
+            });
+
+            // Live calculation; clear the error state as soon as things are valid again
+            document.getElementById('calcForm').addEventListener('input', function () {
+                calculate(false);
+            });
+
+            // Validate on blur, per common form-UX practice
+            fields.forEach(function (f) {
+                getField(f.id).addEventListener('blur', function () {
+                    if (this.value !== '') calculate(true);
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
-
-
